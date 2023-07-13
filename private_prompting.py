@@ -1,3 +1,5 @@
+import openai
+
 class Prompter:
     def __init__(self, api_key, gpt_model, temperature=0.2):
         if not api_key:
@@ -14,7 +16,7 @@ class Prompter:
                                                 temperature=self.temperature)
         return response["choices"][0]["message"]["content"]
     
-    def natural_language_to_sql(self, db_name:str, schema:str, natural_question:str):
+    def natural_language_with_roles(self, db_name:str, schema:str, natural_question:str):
 
         system_content = f"You are a data analyst, and you specialize in solving business questions with SQL.\
                         You are given a natural language question, and your role is to translate the question\
@@ -36,7 +38,7 @@ class Prompter:
     def natural_language_zero_shot(self, db_name:str, schema:str, natural_question:str):
         user_content= f"Answer the question {natural_question} for table {db_name} with schema {schema}"
         
-        full_prompt = [{"role" : "user", "content" : user_content}]
+        full_prompt = [{"role" : "assistant", "content" : user_content}]
         
         
         result = self.chat_completion(full_prompt)
@@ -49,7 +51,7 @@ class Prompter:
                         An appropriate answer is\
                         'SELECT COUNT(*) FROM bank'"
         
-        full_prompt = [{"role" : "user", "content" : user_content}]
+        full_prompt = [{"role" : "assistant", "content" : user_content}]
         
         
         result = self.chat_completion(full_prompt)
@@ -57,13 +59,15 @@ class Prompter:
         return result
     
     def natural_language_few_shot(self, db_name:str, schema:str, natural_question:str):
-        user_content= f"Answer the question {natural_question} for table {db_name} with schema {schema}\
-                        For example, if you receive the question: 'How many records are there?'\
+        prompt= f"Answer the question {natural_question} for table {db_name} with schema {schema}\
+                        Example:\
+                        'How many records are there?'\
                         'SELECT COUNT(*) FROM bank'\
-                        If you receive the question: Find all employees that are unemployed\
+                        Example:\
+                        Find all employees that are unemployed\
                         SELECT * FROM bank WHERE job = 'unemployed'"
         
-        full_prompt = [{"role" : "user", "content" : user_content}]
+        full_prompt = [{"role" : "assistant", "content" : prompt}]
         
         
         result = self.chat_completion(full_prompt)
