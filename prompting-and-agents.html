@@ -15203,7 +15203,7 @@ div.jp-OutputPrompt {
 </li>
 <li><p>Deeply curious about generative AI, Large Language Models, with a focus on engineering and automation</p>
 </li>
-<li><p>I use LLMs, prompting and agents to automate work tasks.</p>
+<li><p>I use LLMs, prompting and agents to automate work tasks</p>
 </li>
 </ul>
 
@@ -15224,7 +15224,7 @@ div.jp-OutputPrompt {
 <ol>
 <li>LLMs use cases and tasks</li>
 <li>The Generative AI project lifecycle</li>
-<li>Choosing the right LLM for the desired task</li>
+<li>Choosing the right LLM architecture</li>
 <li>Key elements of prompting &amp; prompting techniques</li>
 <li>Prompting private LLMs (OpenAI API): <code>ChatCompletion</code></li>
 <li>Prompting open source LLMs through HuggingFace</li>
@@ -15245,7 +15245,7 @@ div.jp-OutputPrompt {
 <h3 align='center'>Part II: Agents and open source frameworks (20 minutes)</h3>
 
 <ol>
-<li>NLP pipelines and chaining</li>
+<li>What are agents</li>
 <li>Introduction to Haystack</li>
 <li>Introduction to LangChain</li>
 <li>Techniques to combine prompting and agents for deployment of applications</li>
@@ -15555,7 +15555,9 @@ div.jp-OutputPrompt {
 
 <p><strong>Formula: instruction, no examples.</strong></p>
 <p>Suppose we want to translate a natural language question to SQL.</p>
-<div class="highlight"><pre><span></span><span class="n">prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Answer the question </span><span class="si">{</span><span class="n">natural_question</span><span class="si">}</span><span class="s2"> for table </span><span class="si">{</span><span class="n">db_name</span><span class="si">}</span><span class="s2"> with schema </span><span class="si">{</span><span class="n">schema</span><span class="si">}</span><span class="s2">&quot;</span>
+<div class="highlight"><pre><span></span><span class="n">prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Answer the question </span><span class="si">{</span><span class="n">natural_question</span><span class="si">}</span><span class="s2"> </span><span class="se">\</span>
+<span class="s2">           for table </span><span class="si">{</span><span class="n">db_name</span><span class="si">}</span><span class="s2"> </span><span class="se">\</span>
+<span class="s2">           with schema </span><span class="si">{</span><span class="n">schema</span><span class="si">}</span><span class="s2">&quot;</span>
 </pre></div>
 
 </div>
@@ -15571,7 +15573,9 @@ div.jp-OutputPrompt {
 <h3 align='center'>Prompting techniques: One-shot inference</h3>
 
 <p><strong>Formula: instruction, one example.</strong></p>
-<div class="highlight"><pre><span></span><span class="n">prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Answer the question </span><span class="si">{</span><span class="n">natural_question</span><span class="si">}</span><span class="s2"> for table </span><span class="si">{</span><span class="n">db_name</span><span class="si">}</span><span class="s2"> with schema </span><span class="si">{</span><span class="n">schema</span><span class="si">}</span><span class="se">\</span>
+<div class="highlight"><pre><span></span><span class="n">prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Answer the question </span><span class="si">{</span><span class="n">natural_question</span><span class="si">}</span><span class="s2"> </span><span class="se">\</span>
+<span class="s2">           for table </span><span class="si">{</span><span class="n">db_name</span><span class="si">}</span><span class="s2"> </span><span class="se">\</span>
+<span class="s2">           with schema </span><span class="si">{</span><span class="n">schema</span><span class="si">}</span><span class="se">\</span>
 <span class="s2">               Question: How many records are there?</span><span class="se">\</span>
 <span class="s2">               Answer: SELECT COUNT(*) FROM bank&quot;</span>
 </pre></div>
@@ -15589,7 +15593,9 @@ div.jp-OutputPrompt {
 <h3 align='center'>Prompting techniques: Few-shot inference</h3>
 
 <p><strong>Formula: instruction, more than one example.</strong></p>
-<div class="highlight"><pre><span></span><span class="n">prompt</span><span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Answer the question </span><span class="si">{</span><span class="n">natural_question</span><span class="si">}</span><span class="s2"> for table </span><span class="si">{</span><span class="n">db_name</span><span class="si">}</span><span class="s2"> with schema </span><span class="si">{</span><span class="n">schema</span><span class="si">}</span><span class="se">\</span>
+<div class="highlight"><pre><span></span><span class="n">prompt</span><span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Answer the question </span><span class="si">{</span><span class="n">natural_question</span><span class="si">}</span><span class="s2"> </span><span class="se">\</span>
+<span class="s2">           for table </span><span class="si">{</span><span class="n">db_name</span><span class="si">}</span><span class="s2"> </span><span class="se">\</span>
+<span class="s2">           with schema </span><span class="si">{</span><span class="n">schema</span><span class="si">}</span><span class="se">\</span>
 <span class="s2">            Question: How many records are there?</span><span class="se">\</span>
 <span class="s2">            Answer: SELECT COUNT(*) FROM bank</span><span class="se">\</span>
 <span class="s2">            Question: Find all employees that are unemployed</span><span class="se">\</span>
@@ -15618,7 +15624,7 @@ div.jp-OutputPrompt {
 </div>
 </div>
 </div></section></section><section ><section >
-<div id="cell-id=4bf0d48e" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=fdc72a91" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15665,23 +15671,18 @@ div.jp-OutputPrompt {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 align='center'>Approach: add a chat completion method to call a GPT-like model (OpenAI API)</h3>
 
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">openai</span>
+<p></p>
+<center>
+  <img src="diagrams/init-chatcompletion.png" width="1200px"/>
 
-<span class="k">class</span> <span class="nc">Prompter</span><span class="p">:</span>
-    <span class="o">...</span>
-    <span class="k">def</span> <span class="nf">chat_completion</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">messages</span><span class="p">:</span> <span class="nb">list</span><span class="p">):</span>
-        <span class="n">openai</span><span class="o">.</span><span class="n">api_key</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">api_key</span>
-        <span class="n">response</span> <span class="o">=</span> <span class="n">openai</span><span class="o">.</span><span class="n">ChatCompletion</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">gpt_model</span><span class="p">,</span> 
-                                                <span class="n">messages</span><span class="o">=</span><span class="n">messages</span><span class="p">,</span>
-                                                <span class="n">temperature</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">temperature</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">response</span><span class="p">[</span><span class="s2">&quot;choices&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;message&quot;</span><span class="p">][</span><span class="s2">&quot;content&quot;</span><span class="p">]</span>
-</pre></div>
+</center>
+
 
 </div>
 </div>
 </div>
 </div></section></section><section ><section >
-<div id="cell-id=fe19033d" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=c253334c" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15732,12 +15733,12 @@ div.jp-OutputPrompt {
 </div>
 </div>
 </div>
-</div><div class="fragment" ><div id="cell-id=efa3d5a3" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="fragment" ><div id="cell-id=efa3d5a3" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[56]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">sqlcmd</span> explore --table bank
@@ -15746,718 +15747,6 @@ div.jp-OutputPrompt {
      </div>
 </div>
 </div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-
-    <style>.sort-button {
-    background: none;
-    border: none;
-}
-
-.sort-button.selected {
-    background: #efefef;
-    border: 1px solid #767676;
-}
-
-.pages-buttons button.selected {
-    background: #efefef;
-    border: 1px solid #767676;
-    border-radius: 2px;
-}
-.pages-buttons button {
-    background: none;
-    border: none;
-    padding: 0 10px;
-}
-.jupysql-table-widget {
-    display: inline;
-}</style>
-    
-            <div id="tableContainer_1689361755" class="table-container"></div>
-            
-    <script>function isJupyterNotebook() {
-    return window["Jupyter"];
-}
-
-function getTable(element) {
-    let table;
-    if (element) {
-        const tableContainer = element.closest(".table-container");
-        table = tableContainer.querySelector("table");
-    } else {
-        const _isJupyterNotebook = isJupyterNotebook();
-        if (_isJupyterNotebook) {
-            table = document.querySelector(".selected .table-container table");
-        } else {
-            table = document.querySelector(".jp-Cell.jp-mod-active .table-container table");
-        }
-    }
-
-    return table;
-}
-
-function getSortDetails() {
-    let sort = undefined;
-
-    const table = getTable();
-    if (table) {
-        const column = table.getAttribute("sort-by-column");
-        const order = table.getAttribute("sort-by-order");
-
-        if (column && order) {
-            sort = {
-                "column" : column,
-                "order" : order
-            }
-        }
-    }
-
-    return sort;
-}
-
-function sortColumnClick(element, column, order, callback) {
-    // fetch data with sort logic
-    const table = getTable(element);
-    table.setAttribute("sort-by-column", column);
-    table.setAttribute("sort-by-order", order);
-    const rowsPerPage = table.getAttribute("rows-per-page");
-    const currrPage = table.getAttribute("curr-page-idx");
-
-    const sort = {
-        'column' : column,
-        'order' : order
-    }
-
-    const fetchParameters = {
-        rowsPerPage : parseInt(rowsPerPage),
-        page : parseInt(currrPage),
-        sort : sort,
-        table : table.getAttribute("table-name")
-    }
-
-    fetchTableData(fetchParameters, callback)
-}
-
-function fetchTableData(fetchParameters, callback) {
-    
-    sendObject = {
-        'nRows' : fetchParameters.rowsPerPage,
-        'page': fetchParameters.page,
-        'table' : fetchParameters.table
-    }
-
-    if (fetchParameters.sort) {
-        sendObject.sort = fetchParameters.sort
-    }
-
-    const _isJupyterNotebook = isJupyterNotebook();
-
-
-    if (_isJupyterNotebook) {
-        // for Jupyter Notebook
-        const comm =
-        Jupyter.notebook.kernel.comm_manager.new_comm('comm_target_handle_table_widget', {})
-        comm.send(sendObject)
-        comm.on_msg(function(msg) {
-            const rows = JSON.parse(msg.content.data['rows']);
-            if (callback) {
-                callback(rows)
-            }
-        });
-    } else{
-        // for JupyterLab
-        dispatchEventToKernel(sendObject)
-
-        const controller = new AbortController();
-    
-        document.addEventListener('onTableWidgetRowsReady', (customEvent) => {
-            const rows = JSON.parse(customEvent.detail.data.rows)
-            controller.abort()
-            if (callback) {
-                callback(rows)
-            }
-        }, {signal: controller.signal})
-    }
-
-
-}
-
-
-function dispatchEventToKernel(data) {
-    let customEvent = new CustomEvent('onUpdateTableWidget', {
-    bubbles: true,
-    cancelable: true,
-    composed: false,
-    detail : {
-        data : data
-    }
-    });
-    document.body.dispatchEvent(customEvent)
-}         
-
-function handleRowsNumberOfRowsChange(e) {
-    const rowsPerPage = parseInt(e.value);
-    let table = getTable();
-    table.setAttribute('rows-per-page', rowsPerPage);
-
-    const nTotal = table.getAttribute('n-total');
-
-    const maxPages = Math.ceil(nTotal / rowsPerPage)
-    table.setAttribute('max-pages', maxPages);
-
-    const fetchParameters = {
-        rowsPerPage : rowsPerPage,
-        page : 0,
-        sort : getSortDetails(),
-        table : table.getAttribute("table-name")
-    }
-
-    setTimeout(() => {
-        fetchTableData(fetchParameters, (rows) => {
-            updateTable(rows);
-        })
-    }, 100);
-}
-
-function updateTable(rows, currPage, tableToUpdate) {
-    const table = tableToUpdate || getTable();
-    const trs = table.querySelectorAll("tbody tr");
-    const tbody = table.querySelector("tbody");
-    tbody.innerHTML = "";
-
-    const _html = createTableRows(rows)
-
-    tbody.innerHTML = _html
-
-    setTimeout(() => {
-        updatePaginationBar(table, currPage || 0)
-    }, 100)
-}
-
-function createTableRows(rows) {
-    const _html = rows.map(function(row) {
-        const tds =
-        Object.keys(row).map(function(key) {
-
-            return "<td>" + row[key] + "</td>"
-        }).join("") ;
-        return "<tr>" + tds + "</tr>";
-    }).join("");
-
-    return _html
-}
-
-function showTablePage(page, rowsPerPage, data) {
-    const table = getTable();
-    const trs = table.querySelectorAll("tbody tr");
-    const tbody = table.querySelector("tbody");
-    tbody.innerHTML = "";
-
-    const rows = data;
-    const startIndex = page * rowsPerPage;
-    const endIndex = startIndex + rowsPerPage;
-    const _html = rows.map(row => {
-        const tds =
-        Object.keys(row).map(key => `<td>${row[key]}</td>`).join("");
-        return `<tr>${tds}</tr>`;
-    }).join("");
-
-    tbody.innerHTML = _html;
-
-    table.setAttribute("curr-page-idx", page);
-    updatePaginationBar(table, page);
-}
-
-function nextPageClick(element) {
-    const table = getTable(element);
-    const currPageIndex = parseInt(table.getAttribute("curr-page-idx"));
-    const rowsPerPage = parseInt(table.getAttribute("rows-per-page"));
-    const maxPages = parseInt(table.getAttribute("max-pages"));
-
-    const nextPage = currPageIndex + 1;
-    if (nextPage < maxPages) {
-        const fetchParameters = {
-            rowsPerPage : rowsPerPage,
-            page : nextPage,
-            sort : getSortDetails(),
-            table : table.getAttribute("table-name")
-        }
-
-        fetchTableData(fetchParameters, (rows) => {
-            showTablePage(nextPage, rowsPerPage, rows)
-        });
-    }
-
-}
-
-function prevPageClick() {
-    const table = getTable();
-    const currPageIndex = parseInt(table.getAttribute("curr-page-idx"));
-    const rowsPerPage = parseInt(table.getAttribute("rows-per-page"));
-    const prevPage = currPageIndex - 1;
-    if (prevPage >= 0) {
-        const fetchParameters = {
-            rowsPerPage : rowsPerPage,
-            page : prevPage,
-            sort : getSortDetails(),
-            table : table.getAttribute("table-name")
-        }
-
-        fetchTableData(fetchParameters, (rows) => {
-            showTablePage(prevPage, rowsPerPage, rows)
-        });
-    }
-}
-
-function setPageButton(table, label, navigateTo, isSelected) {
-    const rowsPerPage = parseInt(table.getAttribute("rows-per-page"));
-    const selected = isSelected ? "selected" : "";
-
-    const button = `
-    <button class="${selected}"
-            onclick="
-            fetchTableData({
-                rowsPerPage : ${rowsPerPage},
-                page : ${navigateTo},
-                sort : getSortDetails(),
-                table : getTable(this).getAttribute('table-name')
-            },
-            (rows) => {
-                showTablePage(${navigateTo}, ${rowsPerPage}, rows);
-                })"
-    >
-        ${label}
-    </button>
-    `
-    return button;
-}
-
-function updatePaginationBar(table, currPage) {
-    const maxPages = parseInt(table.getAttribute("max-pages"));
-    const maxPagesInRow = 6;
-    const rowsPerPage = parseInt(table.getAttribute("rows-per-page"));
-    table.setAttribute("curr-page-idx", currPage);
-
-    let buttonsArray = []
-
-    let startEllipsisAdded = false
-    let endEllipsisAdded = false
-
-    // add first
-    let selected = currPage === 0;
-    buttonsArray.push(setPageButton(table, "1", 0, selected));
-
-    for (i = 1; i < maxPages - 1; i++) {
-        const navigateTo = i;
-        const label = i + 1;
-        selected = currPage === i;
-        const inStartRange = currPage < maxPagesInRow;
-        const inEndRange = maxPages - 1 - currPage < maxPagesInRow;
-
-        if (inStartRange) {
-            if (i < maxPagesInRow) {
-                buttonsArray
-                .push(setPageButton(table, label, navigateTo, selected));
-            } else {
-            if (!startEllipsisAdded) {
-                buttonsArray.push("...");
-                startEllipsisAdded = true;
-            }
-            }
-        } else if (inEndRange) {
-            if (maxPages - 1 - i < maxPagesInRow) {
-                buttonsArray
-                .push(setPageButton(table, label, navigateTo, selected));
-            } else {
-            if (!endEllipsisAdded) {
-                buttonsArray.push("...");
-                endEllipsisAdded = true;
-            }
-            }
-        }
-
-        if (!inStartRange && !inEndRange) {
-            if (currPage === i-2) {
-                buttonsArray.push("...");
-            }
-            if (
-                currPage === i - 1 ||
-                currPage === i ||
-                currPage === i + 1
-            ) {
-                buttonsArray
-                .push(setPageButton(table, label, navigateTo, selected))
-            }
-
-            if (currPage === i+2) {
-                buttonsArray.push("...");
-            }
-
-        }
-    }
-
-    selected = currPage === maxPages - 1 ? "selected" : "";
-
-    buttonsArray.
-    push(setPageButton(table, maxPages, maxPages - 1, selected))
-
-    const buttonsHtml = buttonsArray.join("");
-    table.parentNode
-    .querySelector(".pages-buttons").innerHTML = buttonsHtml;
-}
-
-function removeSelectionFromAllSortButtons() {
-    document.querySelectorAll(".sort-button")
-    .forEach(el => el.classList.remove("selected"))
-}
-
-function initTable() {
-    // template variables we should pass
-    const initialRows = [
-    {
-        "age": 30,
-        "balance": 1787,
-        "campaign": 1,
-        "contact": "cellular",
-        "day": 19,
-        "default": "no",
-        "duration": 79,
-        "education": "primary",
-        "housing": "no",
-        "job": "unemployed",
-        "loan": "no",
-        "marital": "married",
-        "month": "oct",
-        "pdays": -1,
-        "poutcome": "unknown",
-        "previous": 0,
-        "y": "no"
-    },
-    {
-        "age": 33,
-        "balance": 4789,
-        "campaign": 1,
-        "contact": "cellular",
-        "day": 11,
-        "default": "no",
-        "duration": 220,
-        "education": "secondary",
-        "housing": "yes",
-        "job": "services",
-        "loan": "yes",
-        "marital": "married",
-        "month": "may",
-        "pdays": 339,
-        "poutcome": "failure",
-        "previous": 4,
-        "y": "no"
-    },
-    {
-        "age": 35,
-        "balance": 1350,
-        "campaign": 1,
-        "contact": "cellular",
-        "day": 16,
-        "default": "no",
-        "duration": 185,
-        "education": "tertiary",
-        "housing": "yes",
-        "job": "management",
-        "loan": "no",
-        "marital": "single",
-        "month": "apr",
-        "pdays": 330,
-        "poutcome": "failure",
-        "previous": 1,
-        "y": "no"
-    },
-    {
-        "age": 30,
-        "balance": 1476,
-        "campaign": 4,
-        "contact": "unknown",
-        "day": 3,
-        "default": "no",
-        "duration": 199,
-        "education": "tertiary",
-        "housing": "yes",
-        "job": "management",
-        "loan": "yes",
-        "marital": "married",
-        "month": "jun",
-        "pdays": -1,
-        "poutcome": "unknown",
-        "previous": 0,
-        "y": "no"
-    },
-    {
-        "age": 59,
-        "balance": 0,
-        "campaign": 1,
-        "contact": "unknown",
-        "day": 5,
-        "default": "no",
-        "duration": 226,
-        "education": "secondary",
-        "housing": "yes",
-        "job": "blue-collar",
-        "loan": "no",
-        "marital": "married",
-        "month": "may",
-        "pdays": -1,
-        "poutcome": "unknown",
-        "previous": 0,
-        "y": "no"
-    },
-    {
-        "age": 35,
-        "balance": 747,
-        "campaign": 2,
-        "contact": "cellular",
-        "day": 23,
-        "default": "no",
-        "duration": 141,
-        "education": "tertiary",
-        "housing": "no",
-        "job": "management",
-        "loan": "no",
-        "marital": "single",
-        "month": "feb",
-        "pdays": 176,
-        "poutcome": "failure",
-        "previous": 3,
-        "y": "no"
-    },
-    {
-        "age": 36,
-        "balance": 307,
-        "campaign": 1,
-        "contact": "cellular",
-        "day": 14,
-        "default": "no",
-        "duration": 341,
-        "education": "tertiary",
-        "housing": "yes",
-        "job": "self-employed",
-        "loan": "no",
-        "marital": "married",
-        "month": "may",
-        "pdays": 330,
-        "poutcome": "other",
-        "previous": 2,
-        "y": "no"
-    },
-    {
-        "age": 39,
-        "balance": 147,
-        "campaign": 2,
-        "contact": "cellular",
-        "day": 6,
-        "default": "no",
-        "duration": 151,
-        "education": "secondary",
-        "housing": "yes",
-        "job": "technician",
-        "loan": "no",
-        "marital": "married",
-        "month": "may",
-        "pdays": -1,
-        "poutcome": "unknown",
-        "previous": 0,
-        "y": "no"
-    },
-    {
-        "age": 41,
-        "balance": 221,
-        "campaign": 2,
-        "contact": "unknown",
-        "day": 14,
-        "default": "no",
-        "duration": 57,
-        "education": "tertiary",
-        "housing": "yes",
-        "job": "entrepreneur",
-        "loan": "no",
-        "marital": "married",
-        "month": "may",
-        "pdays": -1,
-        "poutcome": "unknown",
-        "previous": 0,
-        "y": "no"
-    },
-    {
-        "age": 43,
-        "balance": -88,
-        "campaign": 1,
-        "contact": "cellular",
-        "day": 17,
-        "default": "no",
-        "duration": 313,
-        "education": "primary",
-        "housing": "yes",
-        "job": "services",
-        "loan": "yes",
-        "marital": "married",
-        "month": "apr",
-        "pdays": 147,
-        "poutcome": "failure",
-        "previous": 2,
-        "y": "no"
-    }
-];
-    const columns = ['age', 'job', 'marital', 'education', 'default', 'balance', 'housing', 'loan', 'contact', 'day', 'month', 'duration', 'campaign', 'pdays', 'previous', 'poutcome', 'y'];
-    const rowsPerPage=10;
-    const nPages=453;
-    const nTotal=4521;
-    const tableName="bank";
-    const tableContainerId = "tableContainer_1689361755";
-    const options = [10, 25, 50, 100];
-    options_html =
-    options.map(option => `<option value=${option}>${option}</option>`);
-
-
-    let ths_ = columns.map(col => `<th>${col}</th>`).join("");
-
-    let table = `
-    <div>
-        <span style="margin-right: 5px">Show</span>
-        <select
-        onchange="handleRowsNumberOfRowsChange(this)">
-            ${options_html}
-        </select>
-        <span style="margin-left: 5px">entries</span>
-    </div>
-
-    <table
-        class="jupysql-table-widget"
-        style='width:100%'
-        curr-page-idx=0
-        rows-per-page=${rowsPerPage}
-        max-pages = ${nPages}
-        n-total=${nTotal}
-        table-name=${tableName}
-    >
-        <thead>
-            <tr>
-                ${ths_}
-            </tr>
-        </thead>
-
-        <tbody>
-        </tbody>
-    </table>
-
-
-    <div style="padding-bottom: 20px;">
-        <button onclick="prevPageClick(this)">Previous</button>
-        <div
-            id = "pagesButtons"
-            class = "pages-buttons"
-            style = "display: inline-flex">
-        </div>
-        <button onclick="nextPageClick(this)">Next</button>
-    </div>
-    `
-
-    let tableContainer = document.querySelector(`#${tableContainerId}`);
-
-    tableContainer.innerHTML = table
-
-    if (initialRows) {
-        initializeTableRows(tableContainer, rowsPerPage, initialRows)
-
-    } else {
-        setTimeout(() => {
-            const fetchParameters = {
-                rowsPerPage : rowsPerPage,
-                page : 0,
-                sort : getSortDetails(),
-                table : tableName
-            }
-
-            fetchTableData(fetchParameters, (rows) => {
-                initializeTableRows(tableContainer, rowsPerPage, rows)
-            })
-        }, 100);
-    }
-    
-}
-
-function initializeTableRows(tableContainer, rowsPerPage, rows) {
-    updateTable(rows, 0,
-        tableContainer.querySelector("table"));
-    // update ths_ to make sure order columns
-    // are matching the data
-    if (rows.length > 0) {
-        let row = rows[0];
-        let ths_ =
-        Object.keys(row).map(col =>
-        `<th>
-            <div style="display: inline-flex; height: 40px">
-                <span style="line-height: 40px">${col}</span>
-                <span style="width: 40px;">
-                    <button
-                        class = "sort-button"
-                        onclick='sortColumnClick(this,
-                        "${col}", "ASC",
-                        (rows) => {
-                            const table = getTable(this);
-                            const currPage =
-                            parseInt(table.getAttribute("curr-page-idx"));
-                            updateTable(rows, currPage);
-                            removeSelectionFromAllSortButtons()
-                            this.className += " selected"
-                            }
-                        )'
-                        title="Sort"
-                        >▴
-                    </button>
-                    <button
-                        class = "sort-button"
-                        onclick='sortColumnClick(this,
-                        "${col}", "DESC",
-                        (rows) => {
-                            const table = getTable(this);
-                            const currPage = parseInt(
-                                table.getAttribute("curr-page-idx"));
-                            updateTable(rows, currPage);
-                            removeSelectionFromAllSortButtons()
-                            this.className += " selected"
-                            }
-                        )'
-                        title="Sort"
-                        >▾
-                    </button>
-                </span>
-            </div>
-
-            </th>`).join("");
-        let thead = tableContainer.querySelector("thead")
-        thead.innerHTML = ths_
-    }
-}
-
-initTable()</script>
-    
-</div>
-
-</div>
-
-</div>
-
 </div>
 
 </div></div></section></section><section ><section >
@@ -16480,7 +15769,7 @@ initTable()</script>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[43]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pm</span>  <span class="o">=</span> <span class="n">Prompter</span><span class="p">(</span><span class="n">open_ai_key</span><span class="p">,</span> <span class="s2">&quot;gpt-3.5-turbo&quot;</span><span class="p">)</span>
@@ -16508,7 +15797,7 @@ initTable()</script>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[44]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pm</span><span class="o">.</span><span class="n">natural_language_zero_shot</span><span class="p">(</span><span class="s2">&quot;bank&quot;</span><span class="p">,</span> 
@@ -16529,13 +15818,13 @@ initTable()</script>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[44]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[6]:</div>
 
 
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>&#39;To determine the number of unique jobs in the table &#34;bank&#34;, we need to look at the distinct values in the &#34;job&#34; column. Unfortunately, without the actual data in the table, it is not possible to provide an exact answer. However, you can run a query on the table to find the distinct values in the &#34;job&#34; column and count them. Here is an example query in SQL:\n\nSELECT COUNT(DISTINCT job) AS unique_jobs\nFROM bank;\n\nThis query will return the number of unique jobs in the &#34;bank&#34; table.&#39;</pre>
+<pre>&#34;To determine the number of unique jobs in the table, we need to look at the &#39;job&#39; column. We can use the DISTINCT keyword in SQL to get the unique values in that column. Here is an example SQL query to find the number of unique jobs:\n\nSELECT COUNT(DISTINCT job) AS unique_jobs\nFROM bank;\n\nThis query will return the count of unique jobs in the &#39;job&#39; column of the &#39;bank&#39; table.&#34;</pre>
 </div>
 
 </div>
@@ -16549,7 +15838,7 @@ initTable()</script>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[45]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pm</span><span class="o">.</span><span class="n">natural_language_zero_shot</span><span class="p">(</span><span class="s2">&quot;bank&quot;</span><span class="p">,</span> 
@@ -16571,13 +15860,13 @@ initTable()</script>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[45]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
 
 
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>&#34;I&#39;m sorry, but I cannot provide the answer to that question as it requires access to the data in the table.&#34;</pre>
+<pre>&#34;To find the total balance for employees by education, we need to group the data by the &#39;education&#39; column and calculate the sum of the &#39;balance&#39; column for each group. Here is the SQL query to achieve this:\n\nSELECT education, SUM(balance) AS total_balance\nFROM bank\nGROUP BY education;&#34;</pre>
 </div>
 
 </div>
@@ -16603,7 +15892,7 @@ initTable()</script>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[46]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pm</span><span class="o">.</span><span class="n">natural_language_single_shot</span><span class="p">(</span><span class="s2">&quot;bank&quot;</span><span class="p">,</span> 
@@ -16624,13 +15913,13 @@ initTable()</script>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[46]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
 
 
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>&#39;SELECT COUNT(DISTINCT job) FROM bank&#39;</pre>
+<pre>&#39;There are 45211 records in the bank table.&#39;</pre>
 </div>
 
 </div>
@@ -16644,7 +15933,7 @@ initTable()</script>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[47]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pm</span><span class="o">.</span><span class="n">natural_language_single_shot</span><span class="p">(</span><span class="s2">&quot;bank&quot;</span><span class="p">,</span> 
@@ -16666,13 +15955,13 @@ initTable()</script>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[47]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
 
 
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>&#39;SELECT education, SUM(balance) AS total_balance\nFROM bank\nGROUP BY education&#39;</pre>
+<pre>&#39;There are 45211 records in the bank table.&#39;</pre>
 </div>
 
 </div>
@@ -16698,7 +15987,7 @@ initTable()</script>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[50]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pm</span><span class="o">.</span><span class="n">natural_language_with_roles</span><span class="p">(</span><span class="s2">&quot;bank&quot;</span><span class="p">,</span> 
@@ -16719,7 +16008,7 @@ initTable()</script>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[50]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[10]:</div>
 
 
 
@@ -16739,7 +16028,7 @@ initTable()</script>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[52]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pm</span><span class="o">.</span><span class="n">natural_language_with_roles</span><span class="p">(</span><span class="s2">&quot;bank&quot;</span><span class="p">,</span> 
@@ -16761,7 +16050,7 @@ initTable()</script>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[52]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[11]:</div>
 
 
 
@@ -16781,7 +16070,7 @@ initTable()</script>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[55]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
@@ -16813,7 +16102,7 @@ initTable()</script>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[55]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[12]:</div>
 
 
 
@@ -16861,7 +16150,7 @@ initTable()</script>
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 align='center'>Prompting open source LLMs through HuggingFace</h3>
 
-<p>You need to ensure you install the right modules via <code>pip</code> along with the model card of the LLM.</p>
+<p>You need to ensure you install the right modules via <code>pip</code> along with any moduyles specified in the model card of the LLM.</p>
 <p></p>
 <center>
   <img src="diagrams/hftasks.png" width="800px"/>
@@ -16903,57 +16192,78 @@ initTable()</script>
 
 <ul>
 <li>HuggingFace hosted models resemble GitHub repos (but not in a good way).</li>
-<li>Dependency hell</li>
+<li>You will need to feel comfortable using the <code>transformers</code>, <code>PyTorch</code> and <code>TensorFlow</code> libraries.</li>
+<li>You will need a bit more than just comfort with the transformer architectures.</li>
+<li>Dependency hell.</li>
 <li>Prompting results vary across different models.</li>
-<li>Model documentation ranges from non-existent to minimal.</li>
-<li>Higher likelihood that you'll need to find the base model and fine-tune your data for better results.</li>
+<li>Model documentation ranges from non-existent to highly technical (research papers).</li>
+<li>Higher likelihood that you'll need to find the base model and fine-tune with your data for better results.</li>
 </ul>
 
 </div>
 </div>
 </div>
-</div></section></section><section ><section ><div id="cell-id=cd8bedc4" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div></section></section><section ><section >
+<div id="cell-id=3bdc9f45" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">AutoModelWithLMHead</span><span class="p">,</span> <span class="n">AutoTokenizer</span>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 align='center'>Prompting a T5-like model to translate NL to SQL</h3>
+
+<p>We will explore the functionality of the T5-like fine-tuned model <code>mrm8488/t5-base-finetuned-wikiSQL</code>.</p>
+<p>Remember that T5-like models are of type encoder-decoder and good at translating between languages.</p>
+<p>This model was fine-tuned on the <code>wiki-SQL</code> dataset.</p>
+
+</div>
+</div>
+</div>
+</div></section></section><section ><section >
+<div id="cell-id=29d8b0b9" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">AutoModelWithLMHead</span><span class="p">,</span> <span class="n">AutoTokenizer</span>
 
 <span class="n">tokenizer</span> <span class="o">=</span> <span class="n">AutoTokenizer</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="s2">&quot;mrm8488/t5-base-finetuned-wikiSQL&quot;</span><span class="p">)</span>
 <span class="n">model</span> <span class="o">=</span> <span class="n">AutoModelWithLMHead</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="s2">&quot;mrm8488/t5-base-finetuned-wikiSQL&quot;</span><span class="p">)</span>
 </pre></div>
 
-     </div>
 </div>
 </div>
 </div>
-
 </div></section></section><section ><section ><div id="cell-id=1b84aeff" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[54]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[25]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_sql</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">db_name</span><span class="p">,</span> <span class="n">schema</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_sql</span><span class="p">(</span><span class="n">query</span><span class="p">):</span>
     <span class="n">input_text</span> <span class="o">=</span> <span class="s2">&quot;translate English to SQL: </span><span class="si">%s</span><span class="s2"> &lt;/s&gt;&quot;</span> <span class="o">%</span> <span class="n">query</span>
-    <span class="n">features</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="p">([</span><span class="n">input_text</span><span class="p">],</span> <span class="n">return_tensors</span><span class="o">=</span><span class="s1">&#39;pt&#39;</span><span class="p">)</span>
+    <span class="n">features</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="p">([</span><span class="n">input_text</span><span class="p">],</span> 
+                         <span class="n">return_tensors</span><span class="o">=</span><span class="s1">&#39;pt&#39;</span><span class="p">)</span>
 
     <span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="n">input_ids</span><span class="o">=</span><span class="n">features</span><span class="p">[</span><span class="s1">&#39;input_ids&#39;</span><span class="p">],</span> 
-               <span class="n">attention_mask</span><span class="o">=</span><span class="n">features</span><span class="p">[</span><span class="s1">&#39;attention_mask&#39;</span><span class="p">])</span>
+                           <span class="n">attention_mask</span><span class="o">=</span><span class="n">features</span><span class="p">[</span><span class="s1">&#39;attention_mask&#39;</span><span class="p">],</span>
+                            <span class="n">max_new_tokens</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">output</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 
 <span class="c1"># Translate</span>
-<span class="n">natural_question</span> <span class="o">=</span>  <span class="s2">&quot;How many entries are there?&quot;</span> 
+<span class="n">natural_question</span> <span class="o">=</span> <span class="s2">&quot;How many entries are there?&quot;</span> 
 <span class="n">db_name</span> <span class="o">=</span> <span class="s2">&quot;banks&quot;</span>
 <span class="n">schema</span> <span class="o">=</span> <span class="n">column_names</span>
 
-<span class="n">get_sql</span><span class="p">(</span><span class="n">natural_question</span><span class="p">,</span> <span class="n">db_name</span><span class="p">,</span> <span class="n">schema</span><span class="p">)</span>
+<span class="n">prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">natural_question</span><span class="si">}</span><span class="s2"> </span><span class="se">\</span>
+<span class="s2">           for table </span><span class="si">{</span><span class="n">db_name</span><span class="si">}</span><span class="s2"> </span><span class="se">\</span>
+<span class="s2">           with schema </span><span class="si">{</span><span class="n">schema</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="n">get_sql</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -16969,13 +16279,13 @@ initTable()</script>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[54]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[25]:</div>
 
 
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>&#39;&lt;pad&gt; SELECT COUNT Entry FROM table&lt;/s&gt;&#39;</pre>
+<pre>&#34;&lt;pad&gt; SELECT COUNT Table FROM table WHERE Schema = [&#39;age&#39;, &#39;job&#39;,&#39;marital&#39;, &#39;education&#39;, &#39;default&#39;, &#39;balance&#39;, &#39;housing&#39;, &#39;loan&#39;, &#39;contact&#39;, &#39;day&#39;,&#39;month&#39;, &#39;duration&#39;, &#39;campaign&#39;, &#39;pdays&#39;, &#39;previous&#39;, &#39;poutcome&#39;, &#39;y&lt;/s&gt;&#34;</pre>
 </div>
 
 </div>
@@ -16998,6 +16308,8 @@ initTable()</script>
 <li>Remember the three base models and their keywords</li>
 <li>Be ready for the possibility of fine-tuning</li>
 </ol>
+<p> </p>
+
 <table>
 <thead>
 <tr>
@@ -17045,8 +16357,22 @@ initTable()</script>
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h1 align='center'>Part II: Agents and open source frameworks</h1>
 
+<p>We will now turn our attention to two open-source frameworks you can use to augment the functionality of prompting through agents: LangChain and Haystack.</p>
 <p>The frameworks introduced here can both be installed via <code>pip</code> and imported as modules into your Python script.</p>
 <p>Both of them offer agents, although they approach the implementation differently.</p>
+
+</div>
+</div>
+</div>
+</div></section></section><section ><section >
+<div id="cell-id=5a597d66" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 align='center'>What are agents</h2>
+
 
 </div>
 </div>
@@ -17058,9 +16384,9 @@ initTable()</script>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 align='center'>Introducing</h3>
+<h2 align='center'>Introducing LangChain</h2>
 <center>
-  <img src="diagrams/langchain.png" width="500px"/>
+  <img src="diagrams/langchain.png" width="300px"/>
 
 </center>
 
@@ -17082,13 +16408,16 @@ initTable()</script>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 align='center'>How does LangChain approach Agents?</h3>
+<h2 align='center'>How does LangChain approach Agents?</h2>
+
+<p> </p>
+
 <center>
-  <img src="diagrams/langchain.png" width="500px"/>
+  <img src="diagrams/langchain.jpg" width="1200px"/>
 
 </center>
 
-<p>With LangChain we think in terms of <strong>components</strong> and <strong>off-the-shelf chains</strong>.</p>
+<p>With <code>LangChain</code> we think in terms of <strong>components</strong> and <strong>off-the-shelf chains</strong>.</p>
 
 </div>
 </div>
@@ -17100,30 +16429,10 @@ initTable()</script>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 align='center'>How to incorporate it into your scripts</h3>
-<center>
-  <img src="diagrams/langchain.png" width="500px"/>
-
-</center>
+<h2 align='center'>How to incorporate it into your scripts</h2>
 
 <p>You can build your custom functions in Python and use their <code>@tool</code> decorator. Then after initializing LangChain along with the GPT model you want, you can then ask it to perform tasks with natural language commands.</p>
-
-</div>
-</div>
-</div>
-</div></section></section><section ><section >
-<div id="cell-id=3ec63722" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 align='center'>Example: automate the creation of social media posts from web pages</h3>
-<center>
-  <img src="diagrams/langchain.png" width="500px"/>
-
-</center>
-
+<p><strong>Mini-demo time.</strong></p>
 <p>Tools the agent was given:</p>
 <ol>
 <li>A web scraper</li>
@@ -17141,35 +16450,21 @@ initTable()</script>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 align='center'>Introducing</h3>
+<h2 align='center'>Introducing Haystack</h2>
 <center>
   <img src="diagrams/haystack-ogimage.png" width="500px"/>
 
 </center>
 
 <p>Haystack is an open-source framework for building search systems that work intelligently over large document collections.</p>
-
-</div>
-</div>
-</div>
-</div></section></section><section ><section >
-<div id="cell-id=5bd8d395" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<center>
-  <img src="diagrams/haystack-ogimage.png" width="500px"/>
-
-</center>
-
+<p>Functionality:</p>
 <ul>
-<li>Call open source models as well as private ones</li>
+<li>Call open source models, hosted models (Azure, AWS) as well as private ones (OpenAI API)</li>
 <li>Build production-ready NLP pipelines with their custom-built tools</li>
 <li>Machinery for unstructured data processing (text)</li>
-<li>Leverage their prompt templates</li>
+<li>Leverage their prompt templates (<a href="https://prompthub.deepset.ai/">prompt-hub</a>)</li>
 <li>Incorporate Agents</li>
+<li>Compatibility with Vector and classic DB.</li>
 <li>Deploy via REST API</li>
 </ul>
 
@@ -17183,70 +16478,304 @@ initTable()</script>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 align='center'>How does Haystack approach Agents?</h3>
-<center>
-  <img src="diagrams/haystack-ogimage.png" width="500px"/>
+<h2 align='center'>How does Haystack approach Agents?</h2>
 
-</center>
-
-<p>They rely heavily on the use of <strong>prompt nodes</strong>, the <strong>pipelines</strong> that connect them, expanding their functionality through <strong>agents</strong> and deploying via a REST API.</p>
-<p>They first developed the framework with document stores, nodes to process information, and pipelines to connect the nodes, AND THEN built agent functionality on top of it.</p>
-<p><strong>If you can get comfortable thinking in these terms, you will be able to leverage their application from prototyping to production for your documents.</strong></p>
+<p>They rely heavily on the use of <strong>prompt nodes</strong>,  the <strong>pipelines</strong> that connect them, AND THEN expand their functionality through <strong>agents</strong> and <strong>tools</strong>.</p>
+<p><strong>Nodes</strong>: each Node achieves one thing (preprocessing documents, retrieving documents, using language models to answer questions and so on)</p>
+<p><strong>Pipelines</strong>: this is the standard Haystack structure that can connect to your data and perform on it NLP tasks that you define.</p>
+<p><strong>Tools</strong>: you can think of a Tool as an expert, that is able to do something really well. Such as a calculator, good at mathematics.</p>
+<p><strong>Agent</strong>: a component that is powered by an LLM, such as GPT-3. It can decide on the next best course of action so as to get to the result of a query. It uses the Tools available to it to achieve this.</p>
 
 </div>
 </div>
 </div>
 </div></section></section><section ><section >
-<div id="cell-id=2a32ac5a" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=9a526c84" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 align='center'>Key concepts</h3>
+<h2 align='center'>Creating a custom node to perform SQL queries in Jupyter</h2>
 
-<p></p>
-<center>
-  <img src="diagrams/haystack-ogimage.png" width="400px"/>
-
-</center>
-<p></p>
-<center>
-  <img src="diagrams/haystack.png" width="1200px"/>
-
-</center>
-
+<p>We are going to use <code>JupySQL</code> to perform the quries.</p>
+<p><code>JupySQL</code> was developed on top of iPython-SQL and its purpose is to connect to DBs of various flavours and execute queries.</p>
+<p>This will be our <strong>tool</strong> <code>JupySQLQuery</code> and we will define it as a subclass of the <code>BaseComponent</code> class in Haystack.</p>
+<p>We will also create a prompt with detailed instructions for how the agent should respond to different situations.</p>
 
 </div>
 </div>
 </div>
 </div></section></section><section ><section >
-<div id="cell-id=badca7fb" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=734beb82" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 align='center'>Sample ready-to-use Natural Language pipelines</h3>
-
-<ul>
-<li><code>ExtractiveQAPipeline</code></li>
-<li><code>DocumentSearchPipeline</code></li>
-<li><code>GenerativeQAPipeline</code></li>
-<li><code>WebQAPipeline</code></li>
-<li><code>SearchSummarizationPipeline</code></li>
-<li><code>TextIndexingPipeline</code></li>
-<li><code>TranslationWrapperPipeline</code></li>
-<li><code>FAQPipeline</code></li>
-<li><code>QuestionGenerationPipeline</code></li>
-<li><code>QuestionAnswerGenerationPipeline</code></li>
-<li><code>MostSimilarDocumentsPipeline</code></li>
-</ul>
-<p>You can create your custom pipelines too. Get familiar with the idea indexing, querying, document stores and their prompt node classes.</p>
+<p><img src="diagrams/JupySQL-agent.png" width="500px"/></p>
 
 </div>
 </div>
 </div>
+</div></section></section><section ><section ><div id="cell-id=afd292d2" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">haystack.agents</span> <span class="kn">import</span> <span class="n">Tool</span>
+<span class="kn">from</span> <span class="nn">jupysqlagent</span> <span class="kn">import</span> <span class="n">agent</span>
+
+<span class="n">jupy_sql_query_tool</span> <span class="o">=</span> <span class="n">Tool</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;JupySQL_Query&quot;</span><span class="p">,</span> 
+                           <span class="n">pipeline_or_node</span><span class="o">=</span><span class="n">jupy_sql_query</span><span class="p">,</span> 
+                           <span class="n">description</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;This tool is useful for consuming SQL queries </span><span class="se">\</span>
+<span class="s2">                                        and responds with the result&quot;&quot;&quot;</span><span class="p">)</span>
+<span class="n">agent</span><span class="o">.</span><span class="n">add_tool</span><span class="p">(</span><span class="n">jupy_sql_query_tool</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div></section></section><section ><section ><div id="cell-id=4d94201c" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;How many records are there&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>
+Agent custom-at-query-time started with {&#39;query&#39;: &#39;How many records are there&#39;, &#39;params&#39;: None}
+<span class="ansi-green-fg">count</span><span class="ansi-green-fg"> the</span><span class="ansi-green-fg"> total</span><span class="ansi-green-fg"> number</span><span class="ansi-green-fg"> of</span><span class="ansi-green-fg"> records</span><span class="ansi-green-fg"> in</span><span class="ansi-green-fg"> the</span><span class="ansi-green-fg"> &#39;</span><span class="ansi-green-fg">bank</span><span class="ansi-green-fg">&#39;</span><span class="ansi-green-fg"> table</span><span class="ansi-green-fg">.</span><span class="ansi-green-fg"> To</span><span class="ansi-green-fg"> do</span><span class="ansi-green-fg"> this</span><span class="ansi-green-fg">,</span><span class="ansi-green-fg"> I</span><span class="ansi-green-fg"> can</span><span class="ansi-green-fg"> use</span><span class="ansi-green-fg"> the</span><span class="ansi-green-fg"> SQL</span><span class="ansi-green-fg"> count</span><span class="ansi-green-fg"> function</span><span class="ansi-green-fg">.
+</span><span class="ansi-green-fg">Tool</span><span class="ansi-green-fg">:</span><span class="ansi-green-fg"> J</span><span class="ansi-green-fg">upy</span><span class="ansi-green-fg">SQL</span><span class="ansi-green-fg">_Query</span><span class="ansi-green-fg">
+</span><span class="ansi-green-fg">Tool</span><span class="ansi-green-fg"> Input</span><span class="ansi-green-fg">:</span><span class="ansi-green-fg"> select</span><span class="ansi-green-fg"> count</span><span class="ansi-green-fg">(*)</span><span class="ansi-green-fg"> from</span><span class="ansi-green-fg"> bank</span><span class="ansi-green-fg">
+</span></pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+<span style="None">Running query in &#x27;duckdb:///bank.duck.db&#x27;</span>
+</div>
+
+</div>
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Observation: <span class="ansi-yellow-fg">+--------------+
+| count_star() |
++--------------+
+|     4521     |
++--------------+</span>
+Thought: <span class="ansi-green-fg">The</span><span class="ansi-green-fg"> count</span><span class="ansi-green-fg"> function</span><span class="ansi-green-fg"> in</span><span class="ansi-green-fg"> SQL</span><span class="ansi-green-fg"> returns</span><span class="ansi-green-fg"> the</span><span class="ansi-green-fg"> total</span><span class="ansi-green-fg"> number</span><span class="ansi-green-fg"> of</span><span class="ansi-green-fg"> records</span><span class="ansi-green-fg"> in</span><span class="ansi-green-fg"> the</span><span class="ansi-green-fg"> &#39;</span><span class="ansi-green-fg">bank</span><span class="ansi-green-fg">&#39;</span><span class="ansi-green-fg"> table</span><span class="ansi-green-fg">.
+</span><span class="ansi-green-fg">Final</span><span class="ansi-green-fg"> Answer</span><span class="ansi-green-fg">:</span><span class="ansi-green-fg"> There</span><span class="ansi-green-fg"> are</span><span class="ansi-green-fg"> </span><span class="ansi-green-fg">452</span><span class="ansi-green-fg">1</span><span class="ansi-green-fg"> records</span><span class="ansi-green-fg"> in</span><span class="ansi-green-fg"> the</span><span class="ansi-green-fg"> table</span><span class="ansi-green-fg">.</span></pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div></section></section><section ><section ><div id="cell-id=0e1f3c3b" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;How many unique levels of education are there&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>
+Agent custom-at-query-time started with {&#39;query&#39;: &#39;How many unique levels of education are there&#39;, &#39;params&#39;: None}
+<span class="ansi-green-fg">identify</span><span class="ansi-green-fg"> the</span><span class="ansi-green-fg"> unique</span><span class="ansi-green-fg"> values</span><span class="ansi-green-fg"> in</span><span class="ansi-green-fg"> the</span><span class="ansi-green-fg"> &#39;</span><span class="ansi-green-fg">education</span><span class="ansi-green-fg">&#39;</span><span class="ansi-green-fg"> column</span><span class="ansi-green-fg"> from</span><span class="ansi-green-fg"> the</span><span class="ansi-green-fg"> &#39;</span><span class="ansi-green-fg">bank</span><span class="ansi-green-fg">&#39;</span><span class="ansi-green-fg"> table</span><span class="ansi-green-fg">.
+</span><span class="ansi-green-fg">Tool</span><span class="ansi-green-fg">:</span><span class="ansi-green-fg"> J</span><span class="ansi-green-fg">upy</span><span class="ansi-green-fg">SQL</span><span class="ansi-green-fg">_Query</span><span class="ansi-green-fg">
+</span><span class="ansi-green-fg">Tool</span><span class="ansi-green-fg"> Input</span><span class="ansi-green-fg">:</span><span class="ansi-green-fg"> select</span><span class="ansi-green-fg"> distinct</span><span class="ansi-green-fg"> education</span><span class="ansi-green-fg"> from</span><span class="ansi-green-fg"> bank</span><span class="ansi-green-fg">
+</span></pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+<span style="None">Running query in &#x27;duckdb:///bank.duck.db&#x27;</span>
+</div>
+
+</div>
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Observation: <span class="ansi-yellow-fg">+-----------+
+| education |
++-----------+
+|  primary  |
+| secondary |
+|  tertiary |
+|  unknown  |
++-----------+</span>
+Thought: <span class="ansi-green-fg">The</span><span class="ansi-green-fg"> query</span><span class="ansi-green-fg"> has</span><span class="ansi-green-fg"> been</span><span class="ansi-green-fg"> successfully</span><span class="ansi-green-fg"> resolved</span><span class="ansi-green-fg"> using</span><span class="ansi-green-fg"> the</span><span class="ansi-green-fg"> SQL</span><span class="ansi-green-fg"> query</span><span class="ansi-green-fg"> which</span><span class="ansi-green-fg"> gives</span><span class="ansi-green-fg"> us</span><span class="ansi-green-fg"> the</span><span class="ansi-green-fg"> unique</span><span class="ansi-green-fg"> levels</span><span class="ansi-green-fg"> of</span><span class="ansi-green-fg"> education</span><span class="ansi-green-fg"> present</span><span class="ansi-green-fg"> in</span><span class="ansi-green-fg"> the</span><span class="ansi-green-fg"> bank</span><span class="ansi-green-fg"> table</span><span class="ansi-green-fg">.
+</span><span class="ansi-green-fg">Final</span><span class="ansi-green-fg"> Answer</span><span class="ansi-green-fg">:</span><span class="ansi-green-fg"> There</span><span class="ansi-green-fg"> are</span><span class="ansi-green-fg"> four</span><span class="ansi-green-fg"> unique</span><span class="ansi-green-fg"> levels</span><span class="ansi-green-fg"> of</span><span class="ansi-green-fg"> education</span><span class="ansi-green-fg"> in</span><span class="ansi-green-fg"> the</span><span class="ansi-green-fg"> bank</span><span class="ansi-green-fg">:</span><span class="ansi-green-fg"> &#39;</span><span class="ansi-green-fg">primary</span><span class="ansi-green-fg">&#39;,</span><span class="ansi-green-fg"> &#39;</span><span class="ansi-green-fg">secondary</span><span class="ansi-green-fg">&#39;,</span><span class="ansi-green-fg"> &#39;</span><span class="ansi-green-fg">ter</span><span class="ansi-green-fg">ti</span><span class="ansi-green-fg">ary</span><span class="ansi-green-fg">&#39;,</span><span class="ansi-green-fg"> and</span><span class="ansi-green-fg"> &#39;</span><span class="ansi-green-fg">unknown</span><span class="ansi-green-fg">&#39;.</span></pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div></section></section><section ><section ><div id="cell-id=d1f1260d" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;How many unique levels of education are there, </span><span class="se">\</span>
+<span class="s2">                    what is the average employee age? &quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>
+Agent custom-at-query-time started with {&#39;query&#39;: &#39;How many unique levels of education are there,                     what is the average employee age? &#39;, &#39;params&#39;: None}
+<span class="ansi-green-fg">find</span><span class="ansi-green-fg"> out</span><span class="ansi-green-fg"> how</span><span class="ansi-green-fg"> many</span><span class="ansi-green-fg"> unique</span><span class="ansi-green-fg"> levels</span><span class="ansi-green-fg"> of</span><span class="ansi-green-fg"> education</span><span class="ansi-green-fg"> there</span><span class="ansi-green-fg"> are</span><span class="ansi-green-fg">,</span><span class="ansi-green-fg"> and</span><span class="ansi-green-fg"> then</span><span class="ansi-green-fg"> I</span><span class="ansi-green-fg"> need</span><span class="ansi-green-fg"> to</span><span class="ansi-green-fg"> find</span><span class="ansi-green-fg"> out</span><span class="ansi-green-fg"> the</span><span class="ansi-green-fg"> average</span><span class="ansi-green-fg"> age</span><span class="ansi-green-fg"> of</span><span class="ansi-green-fg"> the</span><span class="ansi-green-fg"> employees</span><span class="ansi-green-fg">.</span><span class="ansi-green-fg"> 
+
+</span><span class="ansi-green-fg">Tool</span><span class="ansi-green-fg">:</span><span class="ansi-green-fg"> J</span><span class="ansi-green-fg">upy</span><span class="ansi-green-fg">SQL</span><span class="ansi-green-fg">_Query</span><span class="ansi-green-fg"> 
+</span><span class="ansi-green-fg">Tool</span><span class="ansi-green-fg"> Input</span><span class="ansi-green-fg">:</span><span class="ansi-green-fg"> select</span><span class="ansi-green-fg"> count</span><span class="ansi-green-fg">(dist</span><span class="ansi-green-fg">inct</span><span class="ansi-green-fg"> education</span><span class="ansi-green-fg">)</span><span class="ansi-green-fg"> as</span><span class="ansi-green-fg"> unique</span><span class="ansi-green-fg">_</span><span class="ansi-green-fg">education</span><span class="ansi-green-fg">_levels</span><span class="ansi-green-fg"> from</span><span class="ansi-green-fg"> bank</span><span class="ansi-green-fg">;
+</span></pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+<span style="None">Running query in &#x27;duckdb:///bank.duck.db&#x27;</span>
+</div>
+
+</div>
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Observation: <span class="ansi-yellow-fg">+-------------------------+
+| unique_education_levels |
++-------------------------+
+|            4            |
++-------------------------+</span>
+Thought: <span class="ansi-green-fg">There</span><span class="ansi-green-fg"> are</span><span class="ansi-green-fg"> </span><span class="ansi-green-fg">4</span><span class="ansi-green-fg"> unique</span><span class="ansi-green-fg"> levels</span><span class="ansi-green-fg"> of</span><span class="ansi-green-fg"> education</span><span class="ansi-green-fg"> in</span><span class="ansi-green-fg"> the</span><span class="ansi-green-fg"> bank</span><span class="ansi-green-fg">&#39;s</span><span class="ansi-green-fg"> database</span><span class="ansi-green-fg">.</span><span class="ansi-green-fg"> Now</span><span class="ansi-green-fg">,</span><span class="ansi-green-fg"> let</span><span class="ansi-green-fg">&#39;s</span><span class="ansi-green-fg"> find</span><span class="ansi-green-fg"> out</span><span class="ansi-green-fg"> the</span><span class="ansi-green-fg"> average</span><span class="ansi-green-fg"> age</span><span class="ansi-green-fg"> of</span><span class="ansi-green-fg"> the</span><span class="ansi-green-fg"> employees</span><span class="ansi-green-fg">.
+
+</span><span class="ansi-green-fg">Tool</span><span class="ansi-green-fg">:</span><span class="ansi-green-fg"> J</span><span class="ansi-green-fg">upy</span><span class="ansi-green-fg">SQL</span><span class="ansi-green-fg">_Query</span><span class="ansi-green-fg"> 
+</span><span class="ansi-green-fg">Tool</span><span class="ansi-green-fg"> Input</span><span class="ansi-green-fg">:</span><span class="ansi-green-fg"> select</span><span class="ansi-green-fg"> avg</span><span class="ansi-green-fg">(age</span><span class="ansi-green-fg">)</span><span class="ansi-green-fg"> as</span><span class="ansi-green-fg"> average</span><span class="ansi-green-fg">_age</span><span class="ansi-green-fg"> from</span><span class="ansi-green-fg"> bank</span><span class="ansi-green-fg">;
+</span></pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+<span style="None">Running query in &#x27;duckdb:///bank.duck.db&#x27;</span>
+</div>
+
+</div>
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Observation: <span class="ansi-yellow-fg">+-------------------+
+|    average_age    |
++-------------------+
+| 41.17009511170095 |
++-------------------+</span>
+Thought: <span class="ansi-green-fg">The</span><span class="ansi-green-fg"> average</span><span class="ansi-green-fg"> age</span><span class="ansi-green-fg"> of</span><span class="ansi-green-fg"> the</span><span class="ansi-green-fg"> employees</span><span class="ansi-green-fg"> in</span><span class="ansi-green-fg"> the</span><span class="ansi-green-fg"> bank</span><span class="ansi-green-fg">&#39;s</span><span class="ansi-green-fg"> database</span><span class="ansi-green-fg"> is</span><span class="ansi-green-fg"> approximately</span><span class="ansi-green-fg"> </span><span class="ansi-green-fg">41</span><span class="ansi-green-fg">.</span><span class="ansi-green-fg">17</span><span class="ansi-green-fg"> years</span><span class="ansi-green-fg"> old</span><span class="ansi-green-fg">.
+</span><span class="ansi-green-fg">Final</span><span class="ansi-green-fg"> Answer</span><span class="ansi-green-fg">:</span><span class="ansi-green-fg"> There</span><span class="ansi-green-fg"> are</span><span class="ansi-green-fg"> </span><span class="ansi-green-fg">4</span><span class="ansi-green-fg"> unique</span><span class="ansi-green-fg"> levels</span><span class="ansi-green-fg"> of</span><span class="ansi-green-fg"> education</span><span class="ansi-green-fg"> and</span><span class="ansi-green-fg"> the</span><span class="ansi-green-fg"> average</span><span class="ansi-green-fg"> age</span><span class="ansi-green-fg"> of</span><span class="ansi-green-fg"> the</span><span class="ansi-green-fg"> employees</span><span class="ansi-green-fg"> is</span><span class="ansi-green-fg"> approximately</span><span class="ansi-green-fg"> </span><span class="ansi-green-fg">41</span><span class="ansi-green-fg">.</span><span class="ansi-green-fg">17</span><span class="ansi-green-fg"> years</span><span class="ansi-green-fg"> old</span><span class="ansi-green-fg">.</span></pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
 </div></section></section><section ><section >
 <div id="cell-id=0b210a92" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
@@ -17264,10 +16793,10 @@ initTable()</script>
 </ol>
 <p><strong>Cons</strong></p>
 <ol>
-<li>Security issues (?)</li>
+<li>Security concerns</li>
 <li>Evaluation of results</li>
 <li>Deployment</li>
-<li>Integration to open LLMs is not clear</li>
+<li>Integration to open LLMs and hosted LLMs seems to be in early stages</li>
 </ol>
 
 </div>
@@ -17286,8 +16815,8 @@ initTable()</script>
 <ol>
 <li>Established framework with a focus on production-ready NLP applications</li>
 <li>Constantly adapting to new changes and building on top of their framework</li>
-<li>Can be deployed to AWS</li>
-<li>Offers solutions for your custom documents</li>
+<li>Deployment-friendly</li>
+<li>Offers solutions for your custom documents and access to a variety of database flavours</li>
 <li>Offers prompt templates</li>
 </ol>
 <p><strong>Cons</strong></p>
@@ -17311,12 +16840,13 @@ initTable()</script>
 <h1 align='center'>Final thoughts</h1>
 
 <ul>
+<li>Prompt-engineering starts with a well defined project and a clear choice of transformer architecture</li>
 <li>Prompting is usually the first step when using an LLM</li>
 <li>Prompting via the OpenAI API provides a quick solution to prototype, but has limitations when it comes to private data/documents</li>
 <li>Prompting open source LLMs requires understanding of transformer architecture and openness to fine-tune</li>
 <li>We explored two open source frameworks that allow you to augment the funcionality of LLMs via agents</li>
 <li>LangChain approaches agents through <strong>components</strong> and <strong>chains</strong></li>
-<li>Haystack approaches agents in terms of expanding the funcionality of <strong>prompt nodes</strong>, <strong>pipelines</strong> and a <strong>document store</strong></li>
+<li>Haystack approaches agents in terms of expanding the funcionality of <strong>prompt nodes</strong>, <strong>pipelines</strong> and a <strong>document store</strong>.</li>
 </ul>
 
 </div>
