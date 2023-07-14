@@ -46,12 +46,11 @@ class Prompter:
         return result
     
     def natural_language_single_shot(self, db_name:str, schema:str, natural_question:str):
-        user_content= f"Answer the question {natural_question} for table {db_name} with schema {schema}\
-                        For example, if you receive the question: 'How many records are there?'\
-                        An appropriate answer is\
-                        'SELECT COUNT(*) FROM bank'"
+        prompt= f"Answer the question {natural_question} for table {db_name} with schema {schema}\
+                       Question: How many records are there?\
+                       Answer: SELECT COUNT(*) FROM bank"
         
-        full_prompt = [{"role" : "assistant", "content" : user_content}]
+        full_prompt = [{"role" : "assistant", "content" : prompt}]
         
         
         result = self.chat_completion(full_prompt)
@@ -60,12 +59,10 @@ class Prompter:
     
     def natural_language_few_shot(self, db_name:str, schema:str, natural_question:str):
         prompt= f"Answer the question {natural_question} for table {db_name} with schema {schema}\
-                        Example:\
-                        'How many records are there?'\
-                        'SELECT COUNT(*) FROM bank'\
-                        Example:\
-                        Find all employees that are unemployed\
-                        SELECT * FROM bank WHERE job = 'unemployed'"
+                Question: How many records are there?\
+                Answer: SELECT COUNT(*) FROM bank\
+                Question: Find all employees that are unemployed\
+                Answer: SELECT * FROM bank WHERE job = 'unemployed'"
         
         full_prompt = [{"role" : "assistant", "content" : prompt}]
         
