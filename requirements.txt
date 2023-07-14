@@ -10,3 +10,5 @@ jupysql
 duckdb-engine
 jupysql-plugin
 openai
+sentencepiece
+protobuf
