@@ -6,9 +6,6 @@ import os
 # Load the .env file
 load_dotenv(".env")
 
-# Get the API key
-openai_api_key = os.environ.get("openai-key")
-chosen_model = "gpt-4"
 
 # Define the tools that the agent has access to
 # The agent has access to the following tools:
@@ -37,12 +34,3 @@ sql_agent_prompt = PromptTemplate(
                         "Thought: Let's think step-by-step, I first need to\n"
                         "{transcript}",
         )
-# Define a prompt node that uses the GPT-4 model
-prompt_node = PromptNode(model_name_or_path=chosen_model, 
-                         api_key=openai_api_key, 
-                         stop_words=["Observation:"], 
-                         max_length=1000)
-
-# Define the agent
-agent = Agent(prompt_node=prompt_node, 
-              prompt_template=sql_agent_prompt)

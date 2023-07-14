@@ -15624,7 +15624,7 @@ div.jp-OutputPrompt {
 </div>
 </div>
 </div></section></section><section ><section >
-<div id="cell-id=fdc72a91" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=b27ea08d" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15682,7 +15682,7 @@ div.jp-OutputPrompt {
 </div>
 </div>
 </div></section></section><section ><section >
-<div id="cell-id=c253334c" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=a14e28e7" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16204,7 +16204,7 @@ div.jp-OutputPrompt {
 </div>
 </div>
 </div></section></section><section ><section >
-<div id="cell-id=3bdc9f45" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=efcce9b1" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16220,7 +16220,7 @@ div.jp-OutputPrompt {
 </div>
 </div>
 </div></section></section><section ><section >
-<div id="cell-id=29d8b0b9" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=fb907a40" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16365,7 +16365,7 @@ div.jp-OutputPrompt {
 </div>
 </div>
 </div></section></section><section ><section >
-<div id="cell-id=5a597d66" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=4f6c9813" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16373,6 +16373,7 @@ div.jp-OutputPrompt {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 align='center'>What are agents</h2>
 
+<p>The role of an agent is to empower LLMs to decide which actions to take, thereby granting them a certain degree of autonomy. In simple terms, agents are a fusion of LLM chains (which are sequences of LLMs) and tools.</p>
 
 </div>
 </div>
@@ -16457,6 +16458,17 @@ div.jp-OutputPrompt {
 </center>
 
 <p>Haystack is an open-source framework for building search systems that work intelligently over large document collections.</p>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=13ab967c" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Functionality:</p>
 <ul>
 <li>Call open source models, hosted models (Azure, AWS) as well as private ones (OpenAI API)</li>
@@ -16490,7 +16502,7 @@ div.jp-OutputPrompt {
 </div>
 </div>
 </div></section></section><section ><section >
-<div id="cell-id=9a526c84" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=bc0f9a5a" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16507,7 +16519,7 @@ div.jp-OutputPrompt {
 </div>
 </div>
 </div></section></section><section ><section >
-<div id="cell-id=734beb82" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=7e27eb4c" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16518,21 +16530,53 @@ div.jp-OutputPrompt {
 </div>
 </div>
 </div>
-</div></section></section><section ><section ><div id="cell-id=afd292d2" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div></section></section><section ><section ><div id="cell-id=332677e6" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[31]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">haystack.agents</span> <span class="kn">import</span> <span class="n">Tool</span>
-<span class="kn">from</span> <span class="nn">jupysqlagent</span> <span class="kn">import</span> <span class="n">agent</span>
+<span class="kn">from</span> <span class="nn">haystack.nodes</span> <span class="kn">import</span> <span class="n">PromptNode</span>
+<span class="kn">from</span> <span class="nn">jupysqlagent</span> <span class="kn">import</span> <span class="n">sql_agent_prompt</span>
+<span class="kn">from</span> <span class="nn">haystack.agents</span> <span class="kn">import</span> <span class="n">Agent</span><span class="p">,</span> <span class="n">Tool</span>
 
 <span class="n">jupy_sql_query_tool</span> <span class="o">=</span> <span class="n">Tool</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;JupySQL_Query&quot;</span><span class="p">,</span> 
                            <span class="n">pipeline_or_node</span><span class="o">=</span><span class="n">jupy_sql_query</span><span class="p">,</span> 
                            <span class="n">description</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;This tool is useful for consuming SQL queries </span><span class="se">\</span>
 <span class="s2">                                        and responds with the result&quot;&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div></section></section><section ><section ><div id="cell-id=d0c44ead" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[32]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Get the API key</span>
+<span class="n">openai_api_key</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;openai-key&quot;</span><span class="p">)</span>
+<span class="n">chosen_model</span> <span class="o">=</span> <span class="s2">&quot;gpt-4&quot;</span>
+
+
+<span class="c1"># Define a prompt node that uses the GPT-4 model</span>
+<span class="n">prompt_node</span> <span class="o">=</span> <span class="n">PromptNode</span><span class="p">(</span><span class="n">model_name_or_path</span><span class="o">=</span><span class="n">chosen_model</span><span class="p">,</span> 
+                         <span class="n">api_key</span><span class="o">=</span><span class="n">openai_api_key</span><span class="p">,</span> 
+                         <span class="n">stop_words</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Observation:&quot;</span><span class="p">],</span> 
+                         <span class="n">max_length</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+
+<span class="c1"># Define the agent</span>
+<span class="n">agent</span> <span class="o">=</span> <span class="n">Agent</span><span class="p">(</span><span class="n">prompt_node</span><span class="o">=</span><span class="n">prompt_node</span><span class="p">,</span> 
+              <span class="n">prompt_template</span><span class="o">=</span><span class="n">sql_agent_prompt</span><span class="p">)</span>
+
 <span class="n">agent</span><span class="o">.</span><span class="n">add_tool</span><span class="p">(</span><span class="n">jupy_sql_query_tool</span><span class="p">)</span>
 </pre></div>
 
@@ -16541,7 +16585,7 @@ div.jp-OutputPrompt {
 </div>
 </div>
 
-</div></section></section><section ><section ><div id="cell-id=4d94201c" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div></section></section><section ><section ><div id="cell-id=0c928e3c" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16608,7 +16652,7 @@ Thought: <span class="ansi-green-fg">The</span><span class="ansi-green-fg"> coun
 
 </div>
 
-</div></section></section><section ><section ><div id="cell-id=0e1f3c3b" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div></section></section><section ><section ><div id="cell-id=7d8664a6" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16678,7 +16722,7 @@ Thought: <span class="ansi-green-fg">The</span><span class="ansi-green-fg"> quer
 
 </div>
 
-</div></section></section><section ><section ><div id="cell-id=d1f1260d" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div></section></section><section ><section ><div id="cell-id=cc87debc" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
