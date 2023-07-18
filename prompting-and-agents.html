@@ -15197,7 +15197,7 @@ div.jp-OutputPrompt {
 <h2 align='center'>About me</h2>
 
 <ul>
-<li><p>Developer Advocate @ Ploomber (talking and sharing knowledge about tools to improve the data science workflow)</p>
+<li><p>Developer Advocate @ Ploomber (sharing knowledge about tools to improve the data science workflow)</p>
 </li>
 <li><p>Previously a data scientist (for-profit, not-for-profit sector)</p>
 </li>
@@ -15319,34 +15319,14 @@ div.jp-OutputPrompt {
 </div>
 </div>
 </div></section></section><section ><section >
-<div id="cell-id=6b3f2a51" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 align='center'>The generative AI project lifecycle</h2>
-
-<p></p>
-
-<center>
-  <img src="diagrams/genai_project_lifecycle.jpg" width="1200px"/>
-
-</center>
-
-<p>Source: Coursera, Generative AI with LLMs</p>
-
-</div>
-</div>
-</div>
-</div></section></section><section ><section >
 <div id="cell-id=a0ecc728" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 align='center'>Focus of this talk</h2>
+<h2 align='center'>The generative AI project lifecycle</h2>
+<h3 align='center'>Focus of this talk</h3>
 
 <p></p>
 <center>
@@ -15354,6 +15334,7 @@ div.jp-OutputPrompt {
 
 </center>
 
+<p>Source: Coursera, Generative AI with LLMs</p>
 
 </div>
 </div>
@@ -15372,24 +15353,6 @@ div.jp-OutputPrompt {
   <img src="diagrams/opt.jpeg" width="200px"/>
 
 </center>
-
-<ul>
-<li>Decoder-only transformers: Good for <strong>generative tasks</strong> (auto-regressive)</li>
-<li>Encoder-only transformers: Good for tasks that require <strong>understanding of the input</strong> (auto-encoding)</li>
-<li>Encoder-decoder transformers or sequence-to-sequence models: Good for <strong>generative tasks that require input</strong></li>
-</ul>
-
-</div>
-</div>
-</div>
-</div></section></section><section ><section >
-<div id="cell-id=6f0dfd13" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 align='center'>Choosing the right LLM (architecture) </h2>
 
 <p></p>
 
@@ -15429,6 +15392,7 @@ div.jp-OutputPrompt {
 </table>
 <p></p>
 
+<p>“Attention is all you need” (Vaswani, Ashish &amp; Shazeer, Noam &amp; Parmar, Niki &amp; Uszkoreit, Jakob &amp; Jones, Llion &amp; Gomez, Aidan &amp; Kaiser, Lukasz &amp; Polosukhin, Illia. (2017))</p>
 <p><a href="https://github.com/christianversloot/machine-learning-articles/blob/main/differences-between-autoregressive-autoencoding-and-sequence-to-sequence-models-in-machine-learning.md">https://github.com/christianversloot/machine-learning-articles</a></p>
 
 </div>
@@ -15450,7 +15414,7 @@ div.jp-OutputPrompt {
 
 </center>
 
-<p>You can start with prompting a LLM, then fine-tuning* if you aren't getting the results you want. You'll need to curate a dataset for this.</p>
+<p>You can start with prompting a LLM, then fine-tuning* or using retrieval augmentation if you aren't getting the results you want. You'll need to curate a dataset for this.</p>
 <p>*(instruction-tuning or, PEFT + LoRA for example)</p>
 <p>Source: <a href="https://huggingface.co/tasks">https://huggingface.co/tasks</a></p>
 
@@ -15481,12 +15445,31 @@ div.jp-OutputPrompt {
 
 <h3 align='center'>Basic</h3>
 
+<p></p>
+<center>
+  <img src="diagrams/tokens.png" width="1200px"/>
+
+</center>
+
 <ul>
-<li>A LLM to interact with</li>
+<li>An LLM to interact with</li>
 <li>Temperature</li>
 <li>Max tokens</li>
 <li>A natural language request</li>
 </ul>
+
+</div>
+</div>
+</div>
+</div></section></section><section ><section >
+<div id="cell-id=80f6f71a" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 align='center'>Key elements of prompting</h2>
+
 <h3 align='center'>Advanced</h3>
 
 <ul>
@@ -15533,13 +15516,13 @@ div.jp-OutputPrompt {
 <h2 align='center'>Prompting private LLMs (OpenAI API)</h2>
 
 <p>We're going to focus on the <code>ChatCompletion</code> end point.</p>
-<p>Key elements:</p>
-<ul>
-<li>OpenAI API Key</li>
-<li>Model chosen (GPT4, GPT 3.5 Turbo, Text-Davinci)</li>
-<li>Temperature</li>
-<li>Your prompt</li>
-</ul>
+<p>Key elements: OpenAI API Key, model (GPT4, GPT 3.5 Turbo, Text-Davinci), temperature, prompt, max tokens</p>
+<p></p>
+<center>
+  <img src="diagrams/chat-completion.png" width="800px"/>
+
+</center>
+
 
 </div>
 </div>
@@ -15617,7 +15600,9 @@ div.jp-OutputPrompt {
 <p>The 'role' can take one of three values: <code>system</code>, <code>user</code> or the <code>assistant</code></p>
 <p>The <code>content</code> contains the text of the message from the role.</p>
 <p><code>system</code> role: You can use a system level instruction to guide your model's behavior throughout the conversation.</p>
+<pre><code>You are a helpful ... with knowledge about ...</code></pre>
 <p><code>user</code> role: What are typical requests that someone in that role would receive?</p>
+<pre><code>Answer the question ... </code></pre>
 <p><code>assistant</code> role: This role  represents the language model, such as ChatGPT, which generates responses based on the provided user messages.</p>
 
 </div>
@@ -15787,7 +15772,7 @@ div.jp-OutputPrompt {
     display: inline;
 }</style>
     
-            <div id="tableContainer_1689381316" class="table-container"></div>
+            <div id="tableContainer_1689714481" class="table-container"></div>
             
     <script>function isJupyterNotebook() {
     return window["Jupyter"];
@@ -16324,7 +16309,7 @@ function initTable() {
     const nPages=453;
     const nTotal=4521;
     const tableName="bank";
-    const tableContainerId = "tableContainer_1689381316";
+    const tableContainerId = "tableContainer_1689714481";
     const options = [10, 25, 50, 100];
     options_html =
     options.map(option => `<option value=${option}>${option}</option>`);
@@ -16536,7 +16521,7 @@ initTable()</script>
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>&#34;To determine the number of unique jobs in the table, we need to look at the &#39;job&#39; column. We can use the DISTINCT keyword in SQL to find the unique values in this column. \n\nThe SQL query to find the number of unique jobs in the &#39;job&#39; column would be:\n\nSELECT COUNT(DISTINCT job) FROM bank;\n\nThis query will return the count of unique jobs in the &#39;job&#39; column of the &#39;bank&#39; table.&#34;</pre>
+<pre>&#34;To determine the number of unique jobs in the table, we need to look at the &#39;job&#39; column. We can use the DISTINCT keyword in SQL to get the unique values in that column. Here&#39;s an example query:\n\nSELECT COUNT(DISTINCT job) AS unique_jobs\nFROM bank;\n\nThis query will return the number of unique jobs in the &#39;job&#39; column of the &#39;bank&#39; table.&#34;</pre>
 </div>
 
 </div>
@@ -16578,7 +16563,7 @@ initTable()</script>
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>&#39;I\&#39;m sorry, but I cannot provide the answer to that question as it requires access to specific data from the &#34;bank&#34; table.&#39;</pre>
+<pre>&#39;To find the total balance for employees by education, we need to group the data by education and sum the balance column. Here is the SQL query to achieve this:\n\nSELECT education, SUM(balance) AS total_balance\nFROM bank\nGROUP BY education;&#39;</pre>
 </div>
 
 </div>
@@ -16604,7 +16589,7 @@ initTable()</script>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pm</span><span class="o">.</span><span class="n">natural_language_few_shot</span><span class="p">(</span><span class="s2">&quot;bank&quot;</span><span class="p">,</span> 
@@ -16625,7 +16610,7 @@ initTable()</script>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[14]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
 
 
 
@@ -16645,7 +16630,7 @@ initTable()</script>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pm</span><span class="o">.</span><span class="n">natural_language_few_shot</span><span class="p">(</span><span class="s2">&quot;bank&quot;</span><span class="p">,</span> 
@@ -16667,13 +16652,13 @@ initTable()</script>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[15]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[10]:</div>
 
 
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>&#39;Question: What is the total balance for employees by education?\n\nAnswer: \nSELECT education, SUM(balance) AS total_balance \nFROM bank \nGROUP BY education&#39;</pre>
+<pre>&#39;Answer: The total balance for employees by education cannot be determined without further information.&#39;</pre>
 </div>
 
 </div>
@@ -16768,7 +16753,7 @@ initTable()</script>
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>&#39;SELECT education, SUM(balance) AS total_balance FROM bank GROUP BY education&#39;</pre>
+<pre>&#39;SELECT education, SUM(balance) AS total_balance\nFROM bank\nGROUP BY education&#39;</pre>
 </div>
 
 </div>
@@ -16924,25 +16909,17 @@ initTable()</script>
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 align='center'>Prompting a T5-like model to translate NL to SQL</h3>
 
-<p>We will explore the functionality of the T5-like fine-tuned model <code>mrm8488/t5-base-finetuned-wikiSQL</code>.</p>
+<p>We will explore the functionality of fine-tuned T5 model via the id</p>
+<p><code>mrm8488/t5-base-finetuned-wikiSQL</code></p>
 <p>Remember that T5-like models are of type encoder-decoder and good at translating between languages.</p>
 <p>This model was fine-tuned on the <code>wiki-SQL</code> dataset.</p>
+<p><strong>Note that this model was not instruction-tuned</strong></p>
+<p></p>
+<center>
+  <img src="diagrams/t5-tuned.png" width="1000px"/>
 
-</div>
-</div>
-</div>
-</div></section></section><section ><section >
-<div id="cell-id=41caccf0" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">AutoModelWithLMHead</span><span class="p">,</span> <span class="n">AutoTokenizer</span>
+</center>
 
-<span class="n">tokenizer</span> <span class="o">=</span> <span class="n">AutoTokenizer</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="s2">&quot;mrm8488/t5-base-finetuned-wikiSQL&quot;</span><span class="p">)</span>
-<span class="n">model</span> <span class="o">=</span> <span class="n">AutoModelWithLMHead</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="s2">&quot;mrm8488/t5-base-finetuned-wikiSQL&quot;</span><span class="p">)</span>
-</pre></div>
 
 </div>
 </div>
@@ -16952,7 +16929,7 @@ initTable()</script>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_sql</span><span class="p">(</span><span class="n">query</span><span class="p">):</span>
@@ -16991,7 +16968,7 @@ initTable()</script>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[17]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[15]:</div>
 
 
 
@@ -17018,7 +16995,7 @@ initTable()</script>
 <ol>
 <li>Remember your use case, the business constraints and who will use your application</li>
 <li>Remember the three base models and their keywords</li>
-<li>Be ready for the possibility of fine-tuning</li>
+<li>Choose <strong>instruction-tuned foundation models</strong> as a starting point for fine-tuning or retrieval augmentation.</li>
 </ol>
 <p> </p>
 
@@ -17143,14 +17120,42 @@ initTable()</script>
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 align='center'>How to incorporate it into your scripts</h2>
 
-<p>You can build your custom functions in Python and use their <code>@tool</code> decorator. Then after initializing LangChain along with the GPT model you want, you can then ask it to perform tasks with natural language commands.</p>
-<p><strong>Mini-demo time.</strong></p>
-<p>Tools the agent was given:</p>
-<ol>
-<li>A web scraper</li>
-<li>A GPT based prompter with <code>system</code> and <code>user</code> content</li>
-<li>Instructions to summarize the webpage and then write a social media post about the summary</li>
-</ol>
+<p>You can build your custom functions in Python and use their <code>@tool</code> decorator.</p>
+<table>
+<thead>
+<tr>
+  <th></th>
+  <th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><img src="diagrams/scraping-tool.png" alt="" /></td>
+  <td><img src="diagrams/summarize-tool.png" alt="" /></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div></section></section><section ><section >
+<div id="cell-id=0ec72430" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 align='center'>How to incorporate it into your scripts</h2>
+
+<p>Then after initializing LangChain along with the GPT model you want, you can then ask it to perform tasks with natural language commands.</p>
+<p> </p>
+
+<center>
+  <img src="diagrams/LangChain-use.png" width="1000px"/>
+
+</center>
+
 
 </div>
 </div>
@@ -17205,6 +17210,7 @@ initTable()</script>
 
 <p><strong>Nodes</strong>: each Node achieves one thing</p>
 <p><strong>Pipelines</strong>: this is the standard Haystack structure that can connect to your data and perform on it NLP tasks that you define.</p>
+<p><strong>Document stores</strong>: designed to make document retrieval and processing easier, can be connected to nodes via pipelines.</p>
 <p><strong>Tools</strong>: you can think of a Tool as an expert, that is able to do something really well.</p>
 <p><strong>Agent</strong>: a component that is powered by an LLM, such as GPT-3. It can use tools and decide on the next best course of action so as to get to the result of a query.</p>
 
@@ -17222,20 +17228,81 @@ initTable()</script>
 
 <p>We are going to use <code>JupySQL</code> to perform the quries.</p>
 <p><code>JupySQL</code> was developed on top of iPython-SQL and its purpose is to connect to DBs of various flavours and execute queries.</p>
-<p>This will be our <strong>tool</strong> <code>JupySQLQuery</code> and we will define it as a subclass of the <code>BaseComponent</code> class in Haystack.</p>
+<p>This will be our <strong>tool</strong> (<code>JupySQLQuery</code>) and we will define it as a subclass of the <code>BaseComponent</code> class in Haystack.</p>
 <p>We will also create a prompt with detailed instructions for how the agent should respond to different situations.</p>
 
 </div>
 </div>
 </div>
 </div></section></section><section ><section >
-<div id="cell-id=52099b79" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=f6203ebf" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><img src="diagrams/JupySQL-agent.png" width="500px"/></p>
+<p>Initialize JupySQL - this is a tool that can execute queries from Jupyter via the <code>%sql</code> and <code>%%sql</code> magics.</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">haystack.nodes.base</span> <span class="kn">import</span> <span class="n">BaseComponent</span>
+
+<span class="k">class</span> <span class="nc">JupySQLQuery</span><span class="p">(</span><span class="n">BaseComponent</span><span class="p">):</span>
+    <span class="n">outgoing_edges</span> <span class="o">=</span> <span class="mi">1</span>
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="o">%</span><span class="n">reload_ext</span> <span class="n">sql</span>
+        <span class="o">%</span><span class="n">sql</span> <span class="n">duckdb</span><span class="p">:</span><span class="o">///</span><span class="n">bank</span><span class="o">.</span><span class="n">duck</span><span class="o">.</span><span class="n">db</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div></section></section><section ><section >
+<div id="cell-id=e252c98b" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Add a method to execute one query via the <code>%sql</code> magic.</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">haystack.nodes.base</span> <span class="kn">import</span> <span class="n">BaseComponent</span>
+
+<span class="k">class</span> <span class="nc">JupySQLQuery</span><span class="p">(</span><span class="n">BaseComponent</span><span class="p">):</span>
+    <span class="o">...</span>
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="o">%</span><span class="n">sql</span> <span class="p">{{</span><span class="n">query</span><span class="p">}}</span>
+        <span class="n">output</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;results&quot;</span><span class="p">:</span>  <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;query&quot;</span><span class="p">:</span> <span class="n">query</span><span class="p">,</span>
+            
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">output</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div></section></section><section ><section >
+<div id="cell-id=bc00ceec" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Add a method to execute a list of queries via the <code>%sql</code> magic.</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">haystack.nodes.base</span> <span class="kn">import</span> <span class="n">BaseComponent</span>
+
+<span class="k">class</span> <span class="nc">JupySQLQuery</span><span class="p">(</span><span class="n">BaseComponent</span><span class="p">):</span>
+    <span class="o">...</span>
+    <span class="k">def</span> <span class="nf">run_batch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">queries</span><span class="p">:</span> <span class="nb">list</span><span class="p">):</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">queries</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="o">%</span><span class="n">sql</span> <span class="p">{</span><span class="n">query</span><span class="p">}</span>
+            <span class="n">output</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s2">&quot;results&quot;</span><span class="p">:</span>  <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;query&quot;</span><span class="p">:</span> <span class="n">query</span><span class="p">,</span>
+            <span class="p">}</span>
+            <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">results</span>
+</pre></div>
 
 </div>
 </div>
@@ -17245,7 +17312,7 @@ initTable()</script>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">haystack.agents</span> <span class="kn">import</span> <span class="n">Tool</span>
@@ -17253,6 +17320,8 @@ initTable()</script>
 <span class="kn">from</span> <span class="nn">jupysqlagent</span> <span class="kn">import</span> <span class="n">sql_agent_prompt</span>
 <span class="kn">from</span> <span class="nn">haystack.agents</span> <span class="kn">import</span> <span class="n">Agent</span><span class="p">,</span> <span class="n">Tool</span>
 
+
+<span class="n">jupy_sql_query</span> <span class="o">=</span> <span class="n">JupySQLQuery</span><span class="p">()</span>
 <span class="n">jupy_sql_query_tool</span> <span class="o">=</span> <span class="n">Tool</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;JupySQL_Query&quot;</span><span class="p">,</span> 
                            <span class="n">pipeline_or_node</span><span class="o">=</span><span class="n">jupy_sql_query</span><span class="p">,</span> 
                            <span class="n">description</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;This tool is useful for consuming SQL queries </span><span class="se">\</span>
@@ -17269,7 +17338,7 @@ initTable()</script>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Get the API key</span>
@@ -17295,12 +17364,12 @@ initTable()</script>
 </div>
 </div>
 
-</div></section></section><section ><section ><div id="cell-id=c152d143" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=e8df1b2f" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;How many records are there&quot;</span><span class="p">)</span>
@@ -17311,63 +17380,12 @@ initTable()</script>
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>
-Agent custom-at-query-time started with {&#39;query&#39;: &#39;How many records are there&#39;, &#39;params&#39;: None}
-<span class="ansi-green-fg">check</span><span class="ansi-green-fg"> how</span><span class="ansi-green-fg"> many</span><span class="ansi-green-fg"> records</span><span class="ansi-green-fg"> are</span><span class="ansi-green-fg"> in</span><span class="ansi-green-fg"> the</span><span class="ansi-green-fg"> &#39;</span><span class="ansi-green-fg">bank</span><span class="ansi-green-fg">&#39;</span><span class="ansi-green-fg"> table</span><span class="ansi-green-fg">.
-</span><span class="ansi-green-fg">Tool</span><span class="ansi-green-fg">:</span><span class="ansi-green-fg"> J</span><span class="ansi-green-fg">upy</span><span class="ansi-green-fg">SQL</span><span class="ansi-green-fg">_Query</span><span class="ansi-green-fg">
-</span><span class="ansi-green-fg">Tool</span><span class="ansi-green-fg"> Input</span><span class="ansi-green-fg">:</span><span class="ansi-green-fg"> select</span><span class="ansi-green-fg"> count</span><span class="ansi-green-fg">(*)</span><span class="ansi-green-fg"> from</span><span class="ansi-green-fg"> bank</span><span class="ansi-green-fg">
-</span></pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<span style="None">Running query in &#x27;duckdb:///bank.duck.db&#x27;</span>
-</div>
-
-</div>
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Observation: <span class="ansi-yellow-fg">+--------------+
-| count_star() |
-+--------------+
-|     4521     |
-+--------------+</span>
-Thought: <span class="ansi-green-fg">The</span><span class="ansi-green-fg"> count</span><span class="ansi-green-fg"> function</span><span class="ansi-green-fg"> returned</span><span class="ansi-green-fg"> the</span><span class="ansi-green-fg"> total</span><span class="ansi-green-fg"> number</span><span class="ansi-green-fg"> of</span><span class="ansi-green-fg"> records</span><span class="ansi-green-fg"> in</span><span class="ansi-green-fg"> the</span><span class="ansi-green-fg"> &#39;</span><span class="ansi-green-fg">bank</span><span class="ansi-green-fg">&#39;</span><span class="ansi-green-fg"> table</span><span class="ansi-green-fg">.
-</span><span class="ansi-green-fg">Final</span><span class="ansi-green-fg"> Answer</span><span class="ansi-green-fg">:</span><span class="ansi-green-fg"> There</span><span class="ansi-green-fg"> are</span><span class="ansi-green-fg"> </span><span class="ansi-green-fg">452</span><span class="ansi-green-fg">1</span><span class="ansi-green-fg"> records</span><span class="ansi-green-fg"> in</span><span class="ansi-green-fg"> the</span><span class="ansi-green-fg"> table</span><span class="ansi-green-fg">.</span></pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div></section></section><section ><section ><div id="cell-id=e38f608a" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=6fd45111" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;How many unique levels of education are there&quot;</span><span class="p">)</span>
@@ -17376,60 +17394,6 @@ Thought: <span class="ansi-green-fg">The</span><span class="ansi-green-fg"> coun
      </div>
 </div>
 </div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>
-Agent custom-at-query-time started with {&#39;query&#39;: &#39;How many unique levels of education are there&#39;, &#39;params&#39;: None}
-<span class="ansi-green-fg">fetch</span><span class="ansi-green-fg"> all</span><span class="ansi-green-fg"> the</span><span class="ansi-green-fg"> unique</span><span class="ansi-green-fg"> values</span><span class="ansi-green-fg"> from</span><span class="ansi-green-fg"> the</span><span class="ansi-green-fg"> &#39;</span><span class="ansi-green-fg">education</span><span class="ansi-green-fg">&#39;</span><span class="ansi-green-fg"> column</span><span class="ansi-green-fg"> in</span><span class="ansi-green-fg"> the</span><span class="ansi-green-fg"> &#39;</span><span class="ansi-green-fg">bank</span><span class="ansi-green-fg">&#39;</span><span class="ansi-green-fg"> table</span><span class="ansi-green-fg">.</span><span class="ansi-green-fg"> This</span><span class="ansi-green-fg"> can</span><span class="ansi-green-fg"> be</span><span class="ansi-green-fg"> done</span><span class="ansi-green-fg"> using</span><span class="ansi-green-fg"> the</span><span class="ansi-green-fg"> SQL</span><span class="ansi-green-fg"> distinct</span><span class="ansi-green-fg"> keyword</span><span class="ansi-green-fg">.
-</span><span class="ansi-green-fg">Tool</span><span class="ansi-green-fg">:</span><span class="ansi-green-fg"> J</span><span class="ansi-green-fg">upy</span><span class="ansi-green-fg">SQL</span><span class="ansi-green-fg">_Query</span><span class="ansi-green-fg"> 
-</span><span class="ansi-green-fg">Tool</span><span class="ansi-green-fg"> Input</span><span class="ansi-green-fg">:</span><span class="ansi-green-fg"> select</span><span class="ansi-green-fg"> distinct</span><span class="ansi-green-fg"> education</span><span class="ansi-green-fg"> from</span><span class="ansi-green-fg"> bank</span><span class="ansi-green-fg">
-</span></pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<span style="None">Running query in &#x27;duckdb:///bank.duck.db&#x27;</span>
-</div>
-
-</div>
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Observation: <span class="ansi-yellow-fg">+-----------+
-| education |
-+-----------+
-|  primary  |
-| secondary |
-|  tertiary |
-|  unknown  |
-+-----------+</span>
-Thought: <span class="ansi-green-fg">The</span><span class="ansi-green-fg"> tool</span><span class="ansi-green-fg"> has</span><span class="ansi-green-fg"> returned</span><span class="ansi-green-fg"> four</span><span class="ansi-green-fg"> unique</span><span class="ansi-green-fg"> levels</span><span class="ansi-green-fg"> of</span><span class="ansi-green-fg"> education</span><span class="ansi-green-fg">:</span><span class="ansi-green-fg"> primary</span><span class="ansi-green-fg">,</span><span class="ansi-green-fg"> secondary</span><span class="ansi-green-fg">,</span><span class="ansi-green-fg"> tertiary</span><span class="ansi-green-fg">,</span><span class="ansi-green-fg"> and</span><span class="ansi-green-fg"> unknown</span><span class="ansi-green-fg">.</span><span class="ansi-green-fg"> 
-</span><span class="ansi-green-fg">Final</span><span class="ansi-green-fg"> Answer</span><span class="ansi-green-fg">:</span><span class="ansi-green-fg"> There</span><span class="ansi-green-fg"> are</span><span class="ansi-green-fg"> four</span><span class="ansi-green-fg"> unique</span><span class="ansi-green-fg"> levels</span><span class="ansi-green-fg"> of</span><span class="ansi-green-fg"> education</span><span class="ansi-green-fg">.</span></pre>
-</div>
-</div>
-
-</div>
-
 </div>
 
 </div></section></section><section ><section >
