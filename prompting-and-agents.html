@@ -15462,7 +15462,7 @@ div.jp-OutputPrompt {
 </div>
 </div>
 </div></section></section><section ><section >
-<div id="cell-id=80f6f71a" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=0aca7d60" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17235,7 +17235,7 @@ initTable()</script>
 </div>
 </div>
 </div></section></section><section ><section >
-<div id="cell-id=f6203ebf" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=22c188a7" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17256,7 +17256,7 @@ initTable()</script>
 </div>
 </div>
 </div></section></section><section ><section >
-<div id="cell-id=e252c98b" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=dc6391b4" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17281,7 +17281,7 @@ initTable()</script>
 </div>
 </div>
 </div></section></section><section ><section >
-<div id="cell-id=bc00ceec" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=4a068239" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17320,12 +17320,16 @@ initTable()</script>
 <span class="kn">from</span> <span class="nn">jupysqlagent</span> <span class="kn">import</span> <span class="n">sql_agent_prompt</span>
 <span class="kn">from</span> <span class="nn">haystack.agents</span> <span class="kn">import</span> <span class="n">Agent</span><span class="p">,</span> <span class="n">Tool</span>
 
-
+<span class="c1"># Initialize node</span>
 <span class="n">jupy_sql_query</span> <span class="o">=</span> <span class="n">JupySQLQuery</span><span class="p">()</span>
+
+<span class="c1"># Define a tool with our new node</span>
 <span class="n">jupy_sql_query_tool</span> <span class="o">=</span> <span class="n">Tool</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;JupySQL_Query&quot;</span><span class="p">,</span> 
                            <span class="n">pipeline_or_node</span><span class="o">=</span><span class="n">jupy_sql_query</span><span class="p">,</span> 
-                           <span class="n">description</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;This tool is useful for consuming SQL queries </span><span class="se">\</span>
-<span class="s2">                                        and responds with the result&quot;&quot;&quot;</span><span class="p">)</span>
+                           <span class="n">description</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;This tool is useful for </span><span class="se">\</span>
+<span class="s2">                                           consuming SQL queries </span><span class="se">\</span>
+<span class="s2">                                           and responds with the </span><span class="se">\</span>
+<span class="s2">                                           result&quot;&quot;&quot;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -17364,7 +17368,7 @@ initTable()</script>
 </div>
 </div>
 
-</div><div id="cell-id=e8df1b2f" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div id="cell-id=c4ce1d6a" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17380,7 +17384,7 @@ initTable()</script>
 </div>
 </div>
 
-</div><div id="cell-id=6fd45111" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div id="cell-id=905b5588" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
