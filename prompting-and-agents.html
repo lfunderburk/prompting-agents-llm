@@ -15206,6 +15206,32 @@ div.jp-OutputPrompt {
 <li><p>I use LLMs, prompting and agents to automate work tasks</p>
 </li>
 </ul>
+<table>
+<thead>
+<tr>
+  <th></th>
+  <th></th>
+  <th></th>
+  <th></th>
+  <th></th>
+  <th></th>
+  <th></th>
+  <th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><img src="diagrams/Twitter.png" width="100px"/></td>
+  <td>@lgfunderburk</td>
+  <td><img src="diagrams/linkedin-icon-1024x1024-z5dvl47c.png" width="100px"/></td>
+  <td>/laurafunderburk</td>
+  <td><img src="diagrams/Threads_(app)_logo.svg.png" width="100px"/></td>
+  <td>@lauragutf</td>
+  <td><img src="diagrams/mas.png" width="100px"/></td>
+  <td><a href="https://fosstodon.org/@lfunderburk">https://fosstodon.org/@lfunderburk</a></td>
+</tr>
+</tbody>
+</table>
 
 </div>
 </div>
@@ -15219,7 +15245,7 @@ div.jp-OutputPrompt {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 align='center'>Talk at a glance</h2>
 
-<h3 align='center'>Part I: Prompting (40 minutes)</h3>
+<h3 align='center'>Part I: Prompting (45 minutes)</h3>
 
 <ol>
 <li>LLMs use cases and tasks</li>
@@ -15242,7 +15268,7 @@ div.jp-OutputPrompt {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 align='center'>Talk at a glance</h2>
 
-<h3 align='center'>Part II: Agents and open source frameworks (20 minutes)</h3>
+<h3 align='center'>Part II: Agents and open source frameworks (15 minutes)</h3>
 
 <ol>
 <li>What are agents</li>
@@ -15461,7 +15487,7 @@ div.jp-OutputPrompt {
 </div>
 </div>
 </div></section></section><section ><section >
-<div id="cell-id=f0711e1b" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=dfca139c" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15593,7 +15619,7 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 align='center'>Roles in prompting the ChatCompletion endpoint (OpenAI API only)</h3>
+<h3 align='center'>Roles in prompting the ChatCompletion endpoint (OpenAI API and AWS Sagemaker models)</h3>
 
 <p>The 'role' can take one of three values: <code>system</code>, <code>user</code> or the <code>assistant</code></p>
 <p>The <code>content</code> contains the text of the message from the role.</p>
@@ -15656,7 +15682,7 @@ div.jp-OutputPrompt {
 
 <p></p>
 <center>
-  <img src="diagrams/init-chatcompletion.png" width="1200px"/>
+  <img src="diagrams/init-chatcompletion.png" width="1300px"/>
 
 </center>
 
@@ -15675,7 +15701,7 @@ div.jp-OutputPrompt {
 
 <p></p>
 <center>
-  <img src="diagrams/prompt-roles-assistant.png" width="1200px"/>
+  <img src="diagrams/prompt-roles-assistant.png" width="1300px"/>
 
 </center>
 
@@ -15694,7 +15720,7 @@ div.jp-OutputPrompt {
 
 <p></p>
 <center>
-  <img src="diagrams/prompt-roles-sql.png" width="1200px"/>
+  <img src="diagrams/prompt-roles-sql.png" width="1300px"/>
 
 </center>
 
@@ -16464,7 +16490,7 @@ initTable()</script>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pm</span>  <span class="o">=</span> <span class="n">Prompter</span><span class="p">(</span><span class="n">open_ai_key</span><span class="p">,</span> <span class="s2">&quot;gpt-3.5-turbo&quot;</span><span class="p">)</span>
@@ -16492,7 +16518,7 @@ initTable()</script>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pm</span><span class="o">.</span><span class="n">natural_language_zero_shot</span><span class="p">(</span><span class="s2">&quot;bank&quot;</span><span class="p">,</span> 
@@ -16513,13 +16539,13 @@ initTable()</script>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[22]:</div>
 
 
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>&#34;To determine the number of unique jobs in the table, we need to look at the &#39;job&#39; column. We can use the DISTINCT keyword in SQL to get the unique values in that column. Here&#39;s an example query:\n\nSELECT COUNT(DISTINCT job) AS unique_jobs\nFROM bank;\n\nThis query will return the number of unique jobs in the &#39;job&#39; column of the &#39;bank&#39; table.&#34;</pre>
+<pre>&#39;To determine the number of unique jobs in the table &#34;bank&#34;, we need to look at the distinct values in the &#34;job&#34; column.&#39;</pre>
 </div>
 
 </div>
@@ -16533,7 +16559,7 @@ initTable()</script>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[23]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pm</span><span class="o">.</span><span class="n">natural_language_zero_shot</span><span class="p">(</span><span class="s2">&quot;bank&quot;</span><span class="p">,</span> 
@@ -16555,13 +16581,13 @@ initTable()</script>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[23]:</div>
 
 
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>&#39;To find the total balance for employees by education, we need to group the data by education and sum the balance column. Here is the SQL query to achieve this:\n\nSELECT education, SUM(balance) AS total_balance\nFROM bank\nGROUP BY education;&#39;</pre>
+<pre>&#39;I\&#39;m sorry, but I cannot provide the answer to that question as it requires access to specific data from the &#34;bank&#34; table.&#39;</pre>
 </div>
 
 </div>
@@ -16577,7 +16603,7 @@ initTable()</script>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Single-shot results.</p>
+<p>Few-shot results.</p>
 
 </div>
 </div>
@@ -16587,7 +16613,7 @@ initTable()</script>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[24]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pm</span><span class="o">.</span><span class="n">natural_language_few_shot</span><span class="p">(</span><span class="s2">&quot;bank&quot;</span><span class="p">,</span> 
@@ -16608,7 +16634,7 @@ initTable()</script>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[24]:</div>
 
 
 
@@ -16628,7 +16654,7 @@ initTable()</script>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[25]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pm</span><span class="o">.</span><span class="n">natural_language_few_shot</span><span class="p">(</span><span class="s2">&quot;bank&quot;</span><span class="p">,</span> 
@@ -16650,13 +16676,13 @@ initTable()</script>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[10]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[25]:</div>
 
 
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>&#39;Answer: The total balance for employees by education cannot be determined without further information.&#39;</pre>
+<pre>&#39;Answer: The total balance for employees by education can be found by grouping the data by education and summing the balance column. The query would be:\n\nSELECT education, SUM(balance) AS total_balance\nFROM bank\nGROUP BY education;&#39;</pre>
 </div>
 
 </div>
@@ -16682,7 +16708,7 @@ initTable()</script>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[26]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pm</span><span class="o">.</span><span class="n">natural_language_with_roles</span><span class="p">(</span><span class="s2">&quot;bank&quot;</span><span class="p">,</span> 
@@ -16703,7 +16729,7 @@ initTable()</script>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[11]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[26]:</div>
 
 
 
@@ -16723,7 +16749,7 @@ initTable()</script>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[27]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pm</span><span class="o">.</span><span class="n">natural_language_with_roles</span><span class="p">(</span><span class="s2">&quot;bank&quot;</span><span class="p">,</span> 
@@ -16745,13 +16771,13 @@ initTable()</script>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[12]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[27]:</div>
 
 
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>&#39;SELECT education, SUM(balance) AS total_balance\nFROM bank\nGROUP BY education&#39;</pre>
+<pre>&#39;SELECT education, SUM(balance) AS total_balance FROM bank GROUP BY education&#39;</pre>
 </div>
 
 </div>
@@ -17128,8 +17154,8 @@ initTable()</script>
 </thead>
 <tbody>
 <tr>
-  <td><img src="diagrams/scraping-tool.png" alt="" /></td>
-  <td><img src="diagrams/summarize-tool.png" alt="" /></td>
+  <td><img src="diagrams/scraping-tool.png" width="1000px"/></td>
+  <td><img src="diagrams/summarize-tool.png" width="1300px"/></td>
 </tr>
 </tbody>
 </table>
@@ -17154,6 +17180,34 @@ initTable()</script>
 
 </center>
 
+
+</div>
+</div>
+</div>
+</div></section></section><section ><section >
+<div id="cell-id=0b210a92" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 align='center'>LangChain Pros & Cons</h3>
+
+<p><strong>Pros</strong></p>
+<ol>
+<li>May be helpful as a way to get started with prompting the OpenAI API</li>
+<li>Maps easily to OpenAI API chat completion end point</li>
+<li>Enabled embeddings workflow (vector DB)</li>
+</ol>
+<p><strong>Cons</strong></p>
+<ol>
+<li>Hype</li>
+<li>Security concerns</li>
+<li>Evaluation of results</li>
+<li>Currently not production friendly</li>
+<li>In early stages</li>
+<li>Increases cost of OpenAI API usage (hidden prompting)</li>
+</ol>
 
 </div>
 </div>
@@ -17233,7 +17287,7 @@ initTable()</script>
 </div>
 </div>
 </div></section></section><section ><section >
-<div id="cell-id=4b51aeec" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=f7925858" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17254,7 +17308,7 @@ initTable()</script>
 </div>
 </div>
 </div></section></section><section ><section >
-<div id="cell-id=2311fd51" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=270a789f" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17279,7 +17333,7 @@ initTable()</script>
 </div>
 </div>
 </div></section></section><section ><section >
-<div id="cell-id=79ebb61e" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=43c66e3c" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17366,7 +17420,7 @@ initTable()</script>
 </div>
 </div>
 
-</div><div id="cell-id=b30198f2" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div id="cell-id=90b1d01b" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17382,7 +17436,7 @@ initTable()</script>
 </div>
 </div>
 
-</div><div id="cell-id=fa5dd071" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div id="cell-id=630d4900" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17399,33 +17453,6 @@ initTable()</script>
 </div>
 
 </div></section></section><section ><section >
-<div id="cell-id=0b210a92" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 align='center'>LangChain Pros & Cons</h3>
-
-<p><strong>Pros</strong></p>
-<ol>
-<li>May be helpful as a way to get started with OpenAI API</li>
-<li>Maps easily to OpenAI API chat completion end point</li>
-</ol>
-<p><strong>Cons</strong></p>
-<ol>
-<li>Hype</li>
-<li>Security concerns</li>
-<li>Evaluation of results</li>
-<li>Not production friendly</li>
-<li>In early stages</li>
-<li>Skyrockets cost of OpenAI API usage</li>
-</ol>
-
-</div>
-</div>
-</div>
-</div></section></section><section ><section >
 <div id="cell-id=0a5ba266" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -17438,13 +17465,13 @@ initTable()</script>
 <ol>
 <li>Established framework with a focus on production-ready NLP applications</li>
 <li>Constantly adapting to new changes and building on top of their framework</li>
-<li>Deployment-friendly</li>
+<li>Deployment-friendly (REST API)</li>
 <li>Offers solutions for your custom documents and access to a variety of database flavours</li>
 <li>Offers prompt templates</li>
 </ol>
 <p><strong>Cons</strong></p>
 <ol>
-<li>Steeper learning curve</li>
+<li>Steeper learning curve (requires comfort with more structure and OOP)</li>
 <li>Limitations on the types of files it can handle (PDF and markdown currently not supported)</li>
 <li>Narrower focus when it comes to the types of agents it supports (although you can create custom agents, through custom nodes)</li>
 </ol>
@@ -17470,6 +17497,45 @@ initTable()</script>
 <li>LangChain approaches agents through <strong>components</strong> and <strong>chains</strong></li>
 <li>Haystack approaches agents in terms of expanding the funcionality of <strong>prompt nodes</strong>, <strong>pipelines</strong> and a <strong>document store</strong>.</li>
 </ul>
+
+</div>
+</div>
+</div>
+</div></section></section><section ><section >
+<div id="cell-id=cc8c30ae" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 align='center'>Connect with me!</h1>
+
+<table>
+<thead>
+<tr>
+  <th></th>
+  <th></th>
+  <th></th>
+  <th></th>
+  <th></th>
+  <th></th>
+  <th></th>
+  <th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><img src="diagrams/Twitter.png" width="100px"/></td>
+  <td>@lgfunderburk</td>
+  <td><img src="diagrams/linkedin-icon-1024x1024-z5dvl47c.png" width="100px"/></td>
+  <td>/laurafunderburk</td>
+  <td><img src="diagrams/Threads_(app)_logo.svg.png" width="100px"/></td>
+  <td>@lauragutf</td>
+  <td><img src="diagrams/mas.png" width="100px"/></td>
+  <td><a href="https://fosstodon.org/@lfunderburk">https://fosstodon.org/@lfunderburk</a></td>
+</tr>
+</tbody>
+</table>
 
 </div>
 </div>
