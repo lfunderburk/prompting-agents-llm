@@ -15393,7 +15393,6 @@ div.jp-OutputPrompt {
 <p></p>
 
 <p>“Attention is all you need” (Vaswani <em>et al.</em> (2017))</p>
-<p><a href="https://github.com/christianversloot/machine-learning-articles/blob/main/differences-between-autoregressive-autoencoding-and-sequence-to-sequence-models-in-machine-learning.md">https://github.com/christianversloot/machine-learning-articles</a></p>
 
 </div>
 </div>
@@ -15414,7 +15413,7 @@ div.jp-OutputPrompt {
 
 </center>
 
-<p>You can start with prompting a LLM, then fine-tuning* or using retrieval augmentation if you aren't getting the results you want. You'll need to curate a dataset for this.</p>
+<p>You can start with prompting an LLM, then fine-tuning* or using retrieval augmentation if you aren't getting the results you want. You'll need to curate a dataset for this.</p>
 <p>*(instruction-tuning or, PEFT + LoRA for example)</p>
 <p>Source: <a href="https://huggingface.co/tasks">https://huggingface.co/tasks</a></p>
 
@@ -15453,7 +15452,7 @@ div.jp-OutputPrompt {
 
 <ul>
 <li>An LLM to interact with</li>
-<li>Temperature</li>
+<li>Temperature (floating value between 0 and 1)</li>
 <li>Max tokens</li>
 <li>A natural language request</li>
 </ul>
@@ -15462,7 +15461,7 @@ div.jp-OutputPrompt {
 </div>
 </div>
 </div></section></section><section ><section >
-<div id="cell-id=8c5efc79" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=f0711e1b" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15496,8 +15495,6 @@ div.jp-OutputPrompt {
 <li><p>One-shot inference</p>
 </li>
 <li><p>Few-shot inference</p>
-</li>
-<li><p>Chain of thought</p>
 </li>
 <li><p>Roles (OpenAI API)</p>
 </li>
@@ -16848,7 +16845,7 @@ initTable()</script>
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 align='center'>Prompting open source LLMs through HuggingFace</h3>
 
-<p>You need to ensure you install the right modules via <code>pip</code> along with any modules specified in the model card of the LLM.</p>
+<p>You need to ensure you install the right modules via <code>pip</code> along with any modules specified in the model card of the LLM (<code>transformers</code>).</p>
 <p></p>
 <center>
   <img src="diagrams/hftasks.png" width="800px"/>
@@ -17175,6 +17172,7 @@ initTable()</script>
 </center>
 
 <p>Haystack is an open-source framework for building search systems that work intelligently over large document collections.</p>
+<p>Deepset is an open source startup that empowers developers to build flexible and semantic search systems to query all types of data using the Haystack framework.</p>
 
 </div>
 </div>
@@ -17228,15 +17226,14 @@ initTable()</script>
 <h2 align='center'>Creating a custom node to perform SQL queries in Jupyter</h2>
 
 <p>We are going to use <code>JupySQL</code> to perform the quries.</p>
-<p><code>JupySQL</code> was developed on top of iPython-SQL and its purpose is to connect to DBs of various flavours and execute queries.</p>
-<p>This will be our <strong>tool</strong> (<code>JupySQLQuery</code>) and we will define it as a subclass of the <code>BaseComponent</code> class in Haystack.</p>
-<p>We will also create a prompt with detailed instructions for how the agent should respond to different situations.</p>
+<p><code>JupySQL</code> was developed on top of iPython-SQL and its purpose is to connect to DBs of various flavours and execute queries within Jupyter notebooks with the magics <code>%sql</code> and <code>%%sql</code>.</p>
+<p>Let's define <code>JupySQLQuery</code> as a node. We can do this by creating is as a subclass of the <code>haystack.nodes.base.BaseComponent</code> class in Haystack.</p>
 
 </div>
 </div>
 </div>
 </div></section></section><section ><section >
-<div id="cell-id=38f14d09" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=4b51aeec" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17257,7 +17254,7 @@ initTable()</script>
 </div>
 </div>
 </div></section></section><section ><section >
-<div id="cell-id=3c376d74" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=2311fd51" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17282,7 +17279,7 @@ initTable()</script>
 </div>
 </div>
 </div></section></section><section ><section >
-<div id="cell-id=79e5243a" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=79ebb61e" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17369,7 +17366,7 @@ initTable()</script>
 </div>
 </div>
 
-</div><div id="cell-id=4cbc1064" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div id="cell-id=b30198f2" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17385,7 +17382,7 @@ initTable()</script>
 </div>
 </div>
 
-</div><div id="cell-id=c3c5fb32" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div id="cell-id=fa5dd071" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17412,16 +17409,17 @@ initTable()</script>
 
 <p><strong>Pros</strong></p>
 <ol>
-<li>Easy to get started with</li>
+<li>May be helpful as a way to get started with OpenAI API</li>
 <li>Maps easily to OpenAI API chat completion end point</li>
-<li>Can easily connect to a variety of applications based on your function definition</li>
 </ol>
 <p><strong>Cons</strong></p>
 <ol>
+<li>Hype</li>
 <li>Security concerns</li>
 <li>Evaluation of results</li>
-<li>Deployment</li>
-<li>Integration to open LLMs and hosted LLMs seems to be in early stages</li>
+<li>Not production friendly</li>
+<li>In early stages</li>
+<li>Skyrockets cost of OpenAI API usage</li>
 </ol>
 
 </div>
@@ -17447,7 +17445,6 @@ initTable()</script>
 <p><strong>Cons</strong></p>
 <ol>
 <li>Steeper learning curve</li>
-<li>Current deployment option is REST API, but other options currently not available</li>
 <li>Limitations on the types of files it can handle (PDF and markdown currently not supported)</li>
 <li>Narrower focus when it comes to the types of agents it supports (although you can create custom agents, through custom nodes)</li>
 </ol>
